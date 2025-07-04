@@ -1,0 +1,302 @@
+﻿@using SocialApp.APPLICATION.ViewModels.MessageBoxViewModels
+@{
+    Layout = null;
+}
+
+@model ChatBoxVM
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inbox</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+
+    <style>
+        .message-container {
+            scrollbar-width: thin;
+            scrollbar-color: #3b82f6 #f1f1f1;
+        }
+
+            .message-container::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            .message-container::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 10px;
+            }
+
+            .message-container::-webkit-scrollbar-thumb {
+                background-color: #3b82f6;
+                border-radius: 10px;
+            }
+
+        .user-item:hover {
+            background-color: #f0f7ff;
+            transform: translateX(2px);
+            transition: all 0.2s ease;
+        }
+
+        .user-active {
+            background-color: #ebf5ff;
+            border-left: 3px solid #3b82f6;
+        }
+
+        .message-sent {
+            background-color: #3b82f6;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .message-received {
+            background-color: #f3f4f6;
+            color: #1f2937;
+            align-self: flex-start;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 h-screen flex items-center justify-center p-4">
+    <div class="container mx-auto border rounded-xl shadow-lg overflow-hidden bg-white" style="max-width: 1200px; height: 90vh;">
+        <div class="flex h-full">
+
+            @{
+                bool isOnline;
+
+            <!-- Sol panel - Kullanıcı listesi -->
+            <div class="w-1/3 border-r border-gray-200 bg-blue-50 flex flex-col">
+                <!-- Başlık -->
+                <div class="p-4 border-b border-gray-200 bg-white flex justify-between items-center">
+                    <h2 class="text-xl font-semibold text-blue-700">Mesajlar</h2>
+                    <button class="text-blue-500 hover:text-blue-700">
+                        <i class="fas fa-ellipsis-vertical"></i>
+                    </button>
+                </div>
+
+                <!-- Arama çubuğu -->
+                <div class="p-3 bg-blue-50">
+                    <div class="relative">
+                    @* 
+                     <input type="text" placeholder="Kişi ara..." class="w-full py-2 px-4 pl-10 rounded-full border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent" />
+                        <i class="fas fa-search absolute left-3 top-3 text-blue-400"></i>
+                    *@
+                    </div>
+                </div>
+
+                <!-- Kullanıcı listesi -->
+                <div class="flex-1 overflow-y-auto" id="user-list">
+                    @foreach (var user in Model.ChatBoxUsers)
+                    {
+                            isOnline = Model.OnlineUsersList.Any(item => item.Key.Equals(user.UserId.ToString()));
+                            <div class="user-item p-4 border-b border-blue-100 flex items-center cursor-pointer" data-userid="@user.UserId" onclick="selectUser('@user.UserId', '@user.Fullname', '@user.Initials')">
+                            <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg mr-3">@user.Initials</div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-medium text-gray-800">@user.Fullname</h3>
+                                    @if (isOnline)
+                                    {
+                                        <span class="inline-block w-3 h-3 rounded-full bg-green-400 online-status mr-2"></span>
+                                    }
+                                    else
+                                    {
+                                        <span class="inline-block w-3 h-3 rounded-full bg-red-400 online-status mr-2"></span>
+                                    }
+                                </div>
+                                <p class="text-sm text-gray-500 truncate">Son mesaj burada görünecek...</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+                <!-- Sağ panel - Mesajlaşma alanı -->
+                <div class="w-2/3 flex flex-col bg-white">
+                    <!-- Kullanıcı bilgisi ve araçlar -->
+                    <div class="p-4 border-b border-gray-200 flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div id="selected-user-avatar" class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg mr-3 hidden"></div>
+                            <div>
+                                <h3 id="selected-user-name" class="font-medium text-gray-800 hidden"></h3>
+                                <p id="selected-user-status" class="text-xs text-gray-500 hidden"></p>
+                            </div>
+                    </div>
+                    <div class="flex space-x-4 text-blue-500">
+                    </div>
+                </div>
+                <!-- Mesajlar -->
+                <div id="message-container" class="flex-1 p-4 overflow-y-auto message-container bg-blue-50">
+                    <div class="flex flex-col space-y-2" id="message-list">
+                        <!-- Başlangıçta boş -->
+                    </div>
+                </div>
+
+                <!-- Mesaj gönderme formu -->
+                <div class="p-4 border-t border-gray-200 bg-white">
+                    <form id="message-form" class="flex items-center">
+                   
+                        <input type="text" id="message-input" placeholder="Mesaj yazın..." class="flex-1 py-2 px-4 border border-blue-200 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent" autocomplete="off" />
+                        <button type="submit" class="ml-2 p-2 bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-700">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+
+    <script>
+            let connection = null;
+        let selectedUserId = null;
+
+        async function startSignalRConnection() {
+            connection = new signalR.HubConnectionBuilder()
+                .withUrl("/chat") // ChatService hub'ın route'u
+                .withAutomaticReconnect()
+                .build();
+
+            connection.on("ReceiveMessage", function (senderId, receiverId, message, sentAt) {
+                if (senderId === selectedUserId || receiverId === selectedUserId) {
+                    const messageList = document.getElementById('message-list');
+
+                    const isSentByMe = senderId !== selectedUserId;
+                    const messageElement = document.createElement('div');
+                    messageElement.className = isSentByMe
+                        ? 'max-w-xs lg:max-w-md px-4 py-2 rounded-lg message-sent self-end'
+                        : 'max-w-xs lg:max-w-md px-4 py-2 rounded-lg message-received self-start';
+
+                    messageElement.innerHTML = `
+                        <p>${message}</p>
+                        <p class="text-xs ${isSentByMe ? 'text-blue-100 text-right' : 'text-gray-500 text-left'} mt-1">${sentAt}</p>
+                    `;
+                    messageList.appendChild(messageElement);
+                    messageList.scrollTop = messageList.scrollHeight;
+                }
+            });
+
+            try {
+                await connection.start();
+                console.log("✅ SignalR bağlantısı kuruldu");
+            } catch (err) {
+                console.error("❌ SignalR bağlantısı kurulamadı:", err);
+                setTimeout(startSignalRConnection, 3000); // Bağlantı başarısızsa 3 saniye sonra tekrar dene
+            }
+        }
+
+        // Sayfa yüklendiğinde çalıştır
+        window.addEventListener("load", function () {
+            startSignalRConnection();
+        });
+
+        function selectUser(userId, userName, userAvatar) {
+            selectedUserId = userId;
+
+            // Aktif class'ları kaldır
+            document.querySelectorAll('.user-item').forEach(item => item.classList.remove('user-active'));
+
+            // Aktif kullanıcıyı vurgula
+            const selected = [...document.querySelectorAll('.user-item')].find(item => item.getAttribute('data-userid') === userId);
+            if (selected) selected.classList.add('user-active');
+
+            // Sağ panelde bilgileri göster
+            const avatarElem = document.getElementById('selected-user-avatar');
+            const nameElem = document.getElementById('selected-user-name');
+            const statusElem = document.getElementById('selected-user-status');
+
+            avatarElem.classList.remove('hidden');
+            nameElem.classList.remove('hidden');
+            statusElem.classList.remove('hidden');
+
+            avatarElem.textContent = userAvatar;
+            avatarElem.style.backgroundColor = '#3b82f6'; // İstersen dinamik yapabilirsin
+
+            nameElem.textContent = userName;
+
+            // Mesaj listesini temizle, placeholder göster
+            const messageList = document.getElementById('message-list');
+            messageList.innerHTML = `
+                <div class="text-center text-gray-400 py-10">
+                    <i class="fas fa-comment-dots text-4xl mb-2"></i>
+                    <p>${userName} ile mesajlaşma</p>
+                </div>
+            `;
+        fetchMessages(parseInt(userId));
+        }
+
+        document.getElementById('message-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const messageInput = document.getElementById('message-input');
+            const message = messageInput.value.trim();
+
+            if (message && selectedUserId && connection) {
+                // Önce kendi mesajını göster
+                const messageList = document.getElementById('message-list');
+
+                // Eğer placeholder varsa kaldır
+                const placeholder = messageList.querySelector('.text-center');
+                if (placeholder) placeholder.remove();
+
+                const messageElement = document.createElement('div');
+                messageElement.className = 'max-w-xs lg:max-w-md px-4 py-2 rounded-lg message-sent self-end';
+                messageElement.innerHTML = `
+                    <p>${message}</p>
+                    <p class="text-xs text-blue-100 mt-1 text-right">
+                        ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    </p>
+                `;
+                messageList.appendChild(messageElement);
+                messageList.scrollTop = messageList.scrollHeight;
+
+                messageInput.value = '';
+
+                // SignalR ile backend'e mesaj gönder
+                connection.invoke("SendMessage", selectedUserId, message)
+                    .catch(err => console.error("Mesaj gönderme hatası:", err));
+            }
+        });
+
+                       function fetchMessages(otherUserId) {
+            fetch(`/api/messages/GetAllMessages/${otherUserId}`)
+                .then(response => {
+                    if (!response.ok) throw new Error("Mesajlar alınamadı.");
+                    return response.json();
+                })
+                .then(messages => {
+                    // Mesajları listele
+                    displayMessages(messages);
+                })
+                .catch(error => {
+                    console.error(error);
+                    alert("Something went wrong while loading meesages");
+                });
+        }
+
+                function displayMessages(messages) {
+            const messageList = document.getElementById('message-list');
+            messageList.innerHTML = ''; // önce temizle
+
+            messages.forEach(msg => {
+                const isSentByMe = msg.senderId === @Model.LocalUserId;
+
+                const messageElement = document.createElement('div');
+                messageElement.className = isSentByMe ? 'max-w-xs lg:max-w-md px-4 py-2 rounded-lg message-sent self-end' : 'max-w-xs lg:max-w-md px-4 py-2 rounded-lg message-received self-start';
+
+                messageElement.innerHTML = `
+                    <p>${msg.content}</p>
+                    <small>${msg.sendDate}</small>
+                `;
+
+                messageList.appendChild(messageElement);
+            });
+
+            // Mesaj kutusunu en sona kaydır
+            messageList.scrollTop = messageList.scrollHeight;
+        }
+
+    </script>
+</body>
+</html>

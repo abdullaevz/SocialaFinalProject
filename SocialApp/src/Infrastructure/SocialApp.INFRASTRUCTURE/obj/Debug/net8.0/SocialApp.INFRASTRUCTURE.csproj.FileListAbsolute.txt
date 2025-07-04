@@ -1,0 +1,17 @@
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\bin\Debug\net8.0\SocialApp.INFRASTRUCTURE.deps.json
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\bin\Debug\net8.0\SocialApp.INFRASTRUCTURE.dll
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\bin\Debug\net8.0\SocialApp.INFRASTRUCTURE.pdb
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\bin\Debug\net8.0\SocialApp.APPLICATION.dll
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\bin\Debug\net8.0\SocialApp.DOMAIN.dll
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\bin\Debug\net8.0\SocialApp.APPLICATION.pdb
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\bin\Debug\net8.0\SocialApp.DOMAIN.pdb
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\obj\Debug\net8.0\SocialApp.INFRASTRUCTURE.csproj.AssemblyReference.cache
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\obj\Debug\net8.0\SocialApp.INFRASTRUCTURE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\obj\Debug\net8.0\SocialApp.INFRASTRUCTURE.AssemblyInfoInputs.cache
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\obj\Debug\net8.0\SocialApp.INFRASTRUCTURE.AssemblyInfo.cs
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\obj\Debug\net8.0\SocialApp.INFRASTRUCTURE.csproj.CoreCompileInputs.cache
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\obj\Debug\net8.0\SocialAp.46C984BC.Up2Date
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\obj\Debug\net8.0\SocialApp.INFRASTRUCTURE.dll
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\obj\Debug\net8.0\refint\SocialApp.INFRASTRUCTURE.dll
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\obj\Debug\net8.0\SocialApp.INFRASTRUCTURE.pdb
+C:\Users\stduser\source\repos\SocialApp\src\Infrastructure\SocialApp.INFRASTRUCTURE\obj\Debug\net8.0\ref\SocialApp.INFRASTRUCTURE.dll

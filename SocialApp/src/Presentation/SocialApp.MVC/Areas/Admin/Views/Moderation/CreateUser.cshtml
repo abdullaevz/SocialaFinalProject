@@ -1,0 +1,150 @@
+﻿@using SocialApp.APPLICATION.ViewModels.UserViewModels
+@using SocialApp.DOMAIN.Enums
+
+@model AdminUserCreateVM
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="~/admin/css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        @await Html.PartialAsync("_CommonView");
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Dashboard</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            DataTable Example
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Create User</h1>
+                    <div class="card shadow-lg border-0 rounded-4 my-4">
+                        <div class="card-header bg-primary text-white text-center">
+                            <h4 class="mb-0">Create New User</h4>
+                        </div>
+                        <div class="card-body p-4 bg-white rounded-bottom-4">
+                            <form asp-area="Admin" asp-controller="Moderation" asp-action="CreateUser" method="post" enctype="multipart/form-data">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label asp-for="Fullname" class="form-label">Full Name</label>
+                                        <input asp-for="Fullname" class="form-control" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label asp-for="UserName" class="form-label">Username</label>
+                                        <input asp-for="UserName" class="form-control" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label asp-for="Email" class="form-label">Email</label>
+                                        <input asp-for="Email" type="email" class="form-control" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label asp-for="PhoneNumber" class="form-label">Phone Number</label>
+                                        <input asp-for="PhoneNumber" type="tel" class="form-control" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label asp-for="Password" class="form-label">Password</label>
+                                        <input asp-for="Password" type="password" class="form-control" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label asp-for="Country" class="form-label">Country</label>
+                                        <input asp-for="Country" class="form-control" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label asp-for="Profession" class="form-label">Profession</label>
+                                        <input asp-for="Profession" class="form-control" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label asp-for="Description" class="form-label">Description</label>
+                                        <textarea asp-for="Description" class="form-control" rows="1"></textarea>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label asp-for="Role" class="form-label">Role</label>
+                                        <select asp-for="Role" class="form-select" asp-items="Html.GetEnumSelectList<UserRoles>()"></select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label asp-for="SecurityStatus" class="form-label">Security Status</label>
+                                        <select asp-for="SecurityStatus" class="form-select" asp-items="Html.GetEnumSelectList<SecurityStatuses>()"></select>
+                                    </div>
+                                    <div class="col-md-4 form-check">
+                                        <input asp-for="IsPrivate" class="form-check-input" type="checkbox" />
+                                        <label asp-for="IsPrivate" class="form-check-label">Private Account</label>
+                                    </div>
+                                    <div class="col-md-4 form-check">
+                                        <input asp-for="IsVerified" class="form-check-input" type="checkbox" />
+                                        <label asp-for="IsVerified" class="form-check-label">Verified</label>
+                                    </div>
+                                    <div class="col-md-4 form-check">
+                                        <input asp-for="AcceptPolicyStatus" class="form-check-input" type="checkbox" required />
+                                        <label asp-for="AcceptPolicyStatus" class="form-check-label">Accept Policy</label>
+                                    </div>
+                                    <div class="col-md-4 form-check">
+                                        <label asp-for="File" class="form-check-label">Profile Photo (optional)</label>
+                                        <input asp-for="File" class="form-check-input" />
+                                    </div>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary px-5 fw-bold">Create User</button>
+                                </div>
+
+                                <div asp-validation-summary="All" class="text-danger"></div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="~/admin/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="~/admin/assets/demo/chart-area-demo.js"></script>
+    <script src="~/admin/assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+    <script src="~/admin/js/datatables-simple-demo.js"></script>
+</body>
+</html>

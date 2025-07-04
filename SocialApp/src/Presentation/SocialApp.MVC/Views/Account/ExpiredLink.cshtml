@@ -1,0 +1,79 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmation Expired - Sociala</title>
+    <link rel="stylesheet" href="~/public/css/themify-icons.css">
+    <link rel="stylesheet" href="~/public/css/feather.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/public/images/favicon.png">
+    <link rel="stylesheet" href="~/public/css/style.css">
+    <style>
+        .confirmation-card {
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        .confirmation-icon {
+            font-size: 80px;
+            color: #f44336;
+            margin-bottom: 20px;
+        }
+
+        .btn-confirmation {
+            background: linear-gradient(45deg, #ff5e62, #ff9966);
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+            .btn-confirmation:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(255, 94, 98, 0.4);
+            }
+
+        .login-link {
+            color: #ff5e62;
+            font-weight: 600;
+        }
+
+            .login-link:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body class="color-theme-blue mont-font d-flex justify-content-center align-items-center" style="min-height: 100vh; background-color: #f5f6fa;">
+
+    <div class="confirmation-card bg-white p-4 rounded-xxl shadow-sm" style="max-width: 550px; width: 100%;">
+        <div class="text-center">
+            <div class="confirmation-icon">
+                <i class="feather-x-circle"></i>
+            </div>
+            <h2 class="fw-700 text-grey-900 mb-3 font-lg">Confirmation Link Expired</h2>
+            <p class="fw-500 text-grey-500 lh-24 font-xsss mb-4">
+                We're sorry, but your email confirmation link has expired or is no longer valid.
+            </p>
+            <p class="fw-500 text-grey-500 lh-24 font-xsss mb-4">
+                Please request a new confirmation email to activate your account.
+            </p>
+            <div class="mt-4 mb-3">
+                <a href="/Account/ResendConfirmation" class="btn btn-confirmation text-white font-xsss fw-600">Resend Confirmation</a>
+            </div>
+            <p class="font-xsssss fw-500 text-grey-500 mt-4">
+                Already have an account? <a href="/Account/Login" class="login-link">Log in here</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

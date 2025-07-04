@@ -1,0 +1,978 @@
+﻿@using SocialApp.APPLICATION.ViewModels.UserViewModels
+@using SocialApp.DOMAIN.Enums
+@model UserProfileVM
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sociala - Social Network App HTML Template </title>
+    <link rel="stylesheet" href="~/public/css/themify-icons.css">
+    <link rel="stylesheet" href="~/public/css/feather.css">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/public/images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+
+    <link rel="stylesheet" href="~/public/css/style.css">
+    <link rel="stylesheet" href="~/public/css/lightbox.css">
+
+</head>
+<body class="color-theme-blue mont-font">
+    <div class="preloader"></div>
+    <div class="main-wrapper">
+        <!-- navigation top--> @await Html.PartialAsync("_CommonComponent");
+        <!-- navigation top -->
+        <!-- navigation left -->
+        <!-- navigation left -->
+        <!-- main content -->
+        <div class="main-content right-chat-active">
+            <div class="middle-sidebar-bottom">
+                <div class="middle-sidebar-left">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card w-100 border-0 p-0 bg-white shadow-xss rounded-xxl">
+                                <div class="card-body h250 p-0 rounded-xxl overflow-hidden m-3">
+                                    <img src="@Model.ActiveBanner" alt="image">
+                                </div>
+                                <div class="card-body p-0 position-relative">
+                                    <figure class="avatar position-absolute w100 z-index-1" style="top:-40px; left: 30px;">
+                                        <img src="@Model.User.ProfilePhotoPath??@Model.User.DefaultProfilePath" alt="image" class="float-right p-1 bg-white rounded-circle w-100">
+                                    </figure>
+                                    <h4 class="fw-700 font-sm mt-2 mb-lg-5 mb-4 pl-15">
+                                        @Model.User.Fullname <span class="fw-500 font-xssss text-grey-500 mt-1 mb-3 d-block">@Model.User.UserName @if(Model.User.IsVerified){<span class="bi bi-check-circle-fill text-primary"></span>} </span> 
+                                    </h4>
+                                    <div class="d-flex align-items-center justify-content-center position-absolute-md right-15 top-0 me-2">
+                                        
+                                        @if (Model.BlockIds.Contains(Model.User.Id))
+                                        {
+                                             <a asp-controller="UserFriend" asp-action="RemoveBlockUser" asp-route-userId="@Model.LocalUser.Id" asp-route-targetId="@Model.User.Id" class="d-none d-lg-block bg-danger p-3 z-index-1 rounded-3 text-white font-xsssss text-uppercase fw-700 ls-3">Unblock user</a>
+
+                                        }
+                                        else if (Model.AreFriends is true)
+                                        {
+                                            <a href="/UserFriend/RemoveFriend/@Model.User.Id" class="d-none d-lg-block bg-danger p-3 z-index-1 rounded-3 text-white font-xsssss text-uppercase fw-700 ls-3">Remove friend</a>
+                                        }
+                                        else if (Model.LocalUsername is not null && !Model.LocalUsername.Equals(Model.User.UserName))
+                                        {
+
+                                            <a asp-controller="UserFriend" asp-action="SendFriendRequest" asp-route-userId="@Model.User.Id" class="d-none d-lg-block bg-success p-3 z-index-1 rounded-3 text-white font-xsssss text-uppercase fw-700 ls-3">Add Friend</a>
+                                        }
+                                        <div class="dropdown d-inline-block">
+                                            <a href="#" id="dropdownMenu4"
+                                               class="d-none d-lg-block bg-greylight btn-round-lg ms-2 rounded-3 text-grey-700"
+                                               data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="ti-more font-md text-dark"></i>
+                                            </a>
+
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                                                <li>
+                                                    @if (Model.BlockIds.Contains(Model.User.Id))
+                                                    {
+                                                        <a asp-controller="UserFriend" asp-action="RemoveBlockUser" asp-route-userId="@Model.LocalUser.Id" asp-route-targetId="@Model.User.Id" class="dropdown-item text-danger fw-bold">
+                                                            <i class="feather-user-x me-2"></i> Unblock User
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                         <a asp-controller="UserFriend" asp-action="BlockUser" asp-route-userId="@Model.LocalUser.Id" asp-route-targetId="@Model.User.Id" class="dropdown-item text-danger fw-bold">
+                                                        <i class="feather-user-x me-2"></i> Block User
+                                                    </a> 
+                                                    }
+                                                  
+                                                </li>
+                                                <li>
+                                                    <a asp-controller="UserFriend" asp-action="ReportUser" asp-route-userId="@Model.LocalUser.Id" asp-route-targetId="@Model.User.Id" class="dropdown-item text-warning fw-bold" ">
+                                                        <i class="feather-alert-circle me-2"></i> Report User
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="card-body d-block w-100 shadow-none mb-0 p-0 border-top-xs">
+                                    <ul class="nav nav-tabs h55 d-flex product-info-tab border-bottom-0 ps-4" id="pills-tab" role="tablist">
+                                        <li class="list-inline-item me-5">
+                                            <a class="fw-700 font-xssss text-grey-500 pt-3 pb-3 ls-1 d-inline-block active" href="#navtabs1" data-bs-toggle="tab" role="tab" aria-controls="navtabs1" aria-selected="true"> Home </a>
+                                        </li>
+                                        <li class="list-inline-item me-5">
+                                            <a class="fw-700 font-xssss text-grey-500 pt-3 pb-3 ls-1 d-inline-block" href="#navtabs2" data-bs-toggle="tab" role="tab" aria-controls="navtabs2" aria-selected="false"> Saved Posts </a>
+                                        </li>
+                                        <li class="list-inline-item me-5">
+                                            <a class="fw-700 font-xssss text-grey-500 pt-3 pb-3 ls-1 d-inline-block" href="#navtabs3" data-bs-toggle="tab" role="tab" aria-controls="navtabs3" aria-selected="false"> Liked posts </a>
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+
+                            <div class="tab-pane fade show active" id="navtabs1" role="tabpanel" aria-labelledby="navtabs1-tab">
+        <div class="row" style="margin-top: 30px;">
+                  <div class="col-xl-4 col-xxl-3 col-lg-4 pe-0">
+                                        <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3 mt-3"></div>
+                                        <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3">
+
+                                            @if (Model.Accounts.Count!=0)
+                                            {
+                                                
+                                            
+                                               <div class="card-body d-block p-4">
+                                                <h4 class="fw-700 mb-3 font-xsss text-grey-900">About</h4>
+                                                <p class="fw-500 text-grey-500 lh-24 font-xssss mb-0">@Model.User.Description</p>
+                                            </div> @if (Model.Accounts is not null)
+                                            {
+                                                 @foreach (var item in Model.Accounts) { var fullUrl = @item.Url.StartsWith("http") ? @item.Url : $"https://{item.Url}";
+                                            <div class="card-body border-top-xs d-flex">
+                                                <i class="feather-link text-grey-500 me-3 font-lg"></i>
+                                                <h4 class="fw-700 text-grey-900 font-xssss mt-0">
+                                                    @item.Name <span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">
+                                                        <a href="@fullUrl" target="_blank">@item.Url</a>
+                                                    </span>
+                                                </h4>
+                                            </div>
+                                                                                        }
+                                            
+                                            }
+                                            
+                                            
+                                            }
+
+                                         
+                                           
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-xl-8 col-xxl-9 col-lg-8">
+                                        @foreach (var item in Model.Posts)
+                                        {
+                                            if (item.IsDeleted == true) { continue; }
+                                            <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-4">
+                                                <div class="card-body p-0 d-flex">
+                                                    <figure class="avatar me-3">
+                                                        <img src="@item.User.ProfilePhotoPath??@item.User.DefaultProfilePath" alt="image" class="shadow-sm rounded-circle w45">
+                                                    </figure>
+                                                    <h4 class="fw-700 text-grey-900 font-xssss mt-1">
+                                                        @item.User.Fullname <span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">@item.CreationDate.Minute minutes</span>
+                                                    </h4>
+                                                    <div class="ms-auto dropdown">
+                                            <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss"></i>
+                                            </a>
+
+                                             <div class="dropdown-menu dropdown-menu-start p-4 rounded-xxl border-0 shadow-lg" aria-labelledby="dropdownMenuButton">
+                                                <div class="card-body p-0 d-flex">
+
+                                                  
+                                                        @if (Model.SavedPosts.Any(p => p.PostId == item.Id))
+                                                        {  <a asp-controller="Post" 
+   asp-action="RemoveSavePost" 
+   asp-route-postId="@item.Id" 
+   class="d-flex align-items-center text-primary">
+    <i class="bi bi-bookmark-fill me-2 font-lg text-primary"></i>
+    <h4 class="fw-700 font-xssss mb-0 text-primary">Save Post</h4>
+</a>
+
+                                                        }
+                                                        else
+                                                        {
+                                                           <a asp-controller="Post" 
+   asp-action="SavePost" 
+   asp-route-postId="@item.Id" 
+   class="d-flex align-items-center text-primary">
+    <i class="bi bi-bookmark me-2 font-lg text-primary"></i>
+    <h4 class="fw-700 font-xssss mb-0 text-primary">Save Post</h4>
+</a>
+                                                        }
+
+
+
+                                                </div>
+                                                <div class="card-body p-0 d-flex mt-2">
+                                                    @if (!(item.User.Id==Model.LocalUser.Id))
+                                                    {
+                                                       <a asp-controller="Post" 
+   asp-action="ReportPost" 
+   asp-route-reporterId="@Model.LocalUser.Id" 
+   asp-route-postId="@item.Id" 
+   class="d-flex align-items-center text-danger">
+    <i class="feather-alert-circle me-2 font-lg text-danger"></i>
+    <h4 class="fw-700 font-xssss mb-0 text-danger">Report Post</h4>
+</a>
+                                                    }
+
+                                                </div>
+                                                <div class="card-body p-0 d-flex mt-2">
+                                                    @if (item.User.Id==Model.LocalUser.Id || Model.LocalUser.Role.Equals("ADMIN"))
+                                                    {
+                                                         <a asp-controller="Post" 
+   asp-action="DeletePost" 
+   asp-route-userId="@Model.LocalUser.Id" 
+   asp-route-postId="@item.Id" 
+   class="d-flex align-items-center text-danger">
+    <i class="feather-trash-2 me-2 font-lg text-danger"></i>
+    <h4 class="fw-700 font-xssss mb-0 text-danger">Delete this post</h4>
+</a>
+                                                    }
+                                                  </div>
+                                                
+                                            </div>
+                                         
+                                        </div>
+                                                </div>
+                                                <div class="card-body p-0 me-lg-5">
+                                                    <p class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2">@item.Content</p>
+                                                </div> @if (item.MediaPath is not null) { var extension = System.IO.Path.GetExtension(item.MediaPath)?.ToLower(); var isImage = extension == ".jpg" || extension == ".jpeg" || extension == ".png" || extension == ".webp" || extension == ".gif"; var isVideo = extension == ".mp4" || extension == ".mov" || extension == ".webm" || extension == ".avi"; if (isImage) {
+                                                <div class="card-body d-block p-0 mb-3">
+                                                    <div class="row ps-2 pe-2">
+                                                        <div class="col-sm-12 p-1">
+                                                            <a href="@item.MediaPath" data-lightbox="roadtr">
+                                                                <img src="@item.MediaPath" class="rounded-3 w-100" alt="image">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            } else if (isVideo)
+                                            {
+
+                                                <div class="card-body d-block p-0 mb-3">
+                                                    <div class="row ps-2 pe-2">
+                                                        <div class="col-sm-12 p-1">
+                                                            <video class="rounded-3 w-100" controls>
+                                                                <source src="@item.MediaPath" type="video/mp4">
+                                                            </video>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            } }
+                                            <!-- Like ve Yorum Butonları -->
+                                            <div class="card-body d-flex p-0 align-items-center">
+                                                <!-- Like Kısmı (Sol Tarafta) --> @* <div class="d-flex align-items-center me-3">
+                            <span class="fw-600 text-grey-900 font-xssss">
+                              <a href="#" class="like-button" data-user-id="@Model.LocalUser.Id" data-post-id="@item.Id">
+                                <i class="bi bi-heart text-danger fs-3"></i>
+                              </a> @item.LikeCount </span>
+                          </div> *@ <div class="d-flex align-items-center me-3">
+                                                    <span class="fw-600 text-grey-900 font-xssss">
+                                                        <a href="#" class="like-button" data-user-id="@Model.LocalUser.Id" data-post-id="@item.Id" data-is-liked="@Model.LikedPosts.Any(p => p.PostId == item.Id)">
+                                                            <!-- Like ikonu (dolu/boş) --> @if (Model.LikedPosts.Any(p => p.PostId == item.Id)) {
+                                                            <i class="bi bi-heart-fill text-danger fs-3"></i>
+                                                                                                                        } else
+                                                            {
+
+                                                                <i class="bi bi-heart text-danger fs-3"></i>
+                                                            }
+                                                        </a>
+                                                        <span class="like-count">@item.LikeCount</span>
+                                                    </span>
+                                                </div>
+                                                <!-- Yorum Butonu (Sağ Tarafta) -->
+                                                <button class="ms-auto btn btn-sm bg-transparent comment-trigger">
+                                                    <i class="feather-message-circle text-dark me-1 font-md"></i>
+                                                    <span class="fw-600 text-grey-900 font-xssss">Comments</span>
+                                                </button>
+                                            </div>
+                                            <!-- Yorumlar Bölümü (Başlangıçta Gizli) -->
+                                            <div class="comments-section mt-3" style="display: none;">
+                                                <div class="border-top pt-3">
+                                                    <!-- Mevcut Yorumlar -->
+                                                    <div class="mb-3">
+                                                        <!-- Yorum 1 --> @foreach (var comment in item.Comments) { if (!comment.IsDeleted) {
+                                                        <div class="d-flex mb-3">
+                                                            <img src="@comment.AppUser.ProfilePhotoPath??@comment.AppUser.DefaultProfilePath" alt="user" class="rounded-circle me-2" width="40">
+                                                            <div>
+                                                                <h6 class="fw-600 mb-0 font-xssss">
+                                                                    @comment.AppUser.Fullname <span class="text-grey-500 font-xsssss fw-500 ms-2">@comment.CreationDate.Minute minutes</span> @if (comment.AppUser.Id == Model.LocalUser.Id) {
+                                                                    <a asp-controller="Comment" asp-action="DeleteComment" asp-route-commentId="@comment.Id" class="text-danger ms-2" title="Delete Comment">
+                                                                        <i class="feather-trash-2"></i>
+                                                                    </a>
+                                                                                                                                        }
+                                                                </h6>
+                                                                <p class="text-grey-700 font-xssss mt-1 mb-2">@comment.Content</p>
+                                                            </div>
+                                                        </div>
+                                                                                                                } }
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="@Model.LocalUser.ProfilePhotoPath??@Model.LocalUser.DefaultProfilePath" alt="user" class="rounded-circle me-2" width="40">
+                                                        <form asp-controller="Comment" asp-action="CreateComment" method="post">
+                                                            <div class="input-group flex-grow-1">
+                                                                <input type="hidden" name="UserId" value="@Model.LocalUser.Id" />
+                                                                <input type="hidden" name="PostId" value="@item.Id" />
+                                                                <input type="text" name="Content" class="form-control border-3 bg-greylight rounded-3 font-xssss py-3" placeholder="Write a comment..." />
+                                                                <button type="submit" class="btn bg-transparent text-primary fw-600 font-xssss">Post</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                }
+                                    </div>
+                                   </div>
+        </div>
+     <div class="tab-pane fade" id="navtabs2" role="tabpanel" aria-labelledby="navtabs2-tab">
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-xl-8 col-xxl-9 col-lg-8">
+                 @foreach (var item in Model.OtherSavedPosts)
+                                        {
+                                            if (item.IsDeleted == true) { continue; }
+                                            <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-4">
+                                                <div class="card-body p-0 d-flex">
+                                                    <figure class="avatar me-3">
+                                                        <img src="@item.User.ProfilePhotoPath??@item.User.DefaultProfilePath" alt="image" class="shadow-sm rounded-circle w45">
+                                                    </figure>
+                                                    <h4 class="fw-700 text-grey-900 font-xssss mt-1">
+                                                        @item.User.Fullname <span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">@item.CreationDate.Minute minutes</span>
+                                                    </h4>
+                                                    <div class="ms-auto dropdown">
+                                            <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss"></i>
+                                            </a>
+
+                                             <div class="dropdown-menu dropdown-menu-start p-4 rounded-xxl border-0 shadow-lg" aria-labelledby="dropdownMenuButton">
+                                                <div class="card-body p-0 d-flex">
+
+                                                  
+                                                        @if (Model.SavedPosts.Any(p => p.PostId == item.Id))
+                                                        {  <a asp-controller="Post" 
+   asp-action="RemoveSavePost" 
+   asp-route-postId="@item.Id" 
+   class="d-flex align-items-center text-primary">
+    <i class="bi bi-bookmark-fill me-2 font-lg text-primary"></i>
+    <h4 class="fw-700 font-xssss mb-0 text-primary">Save Post</h4>
+</a>
+
+                                                        }
+                                                        else
+                                                        {
+                                                           <a asp-controller="Post" 
+   asp-action="SavePost" 
+   asp-route-postId="@item.Id" 
+   class="d-flex align-items-center text-primary">
+    <i class="bi bi-bookmark me-2 font-lg text-primary"></i>
+    <h4 class="fw-700 font-xssss mb-0 text-primary">Save Post</h4>
+</a>
+                                                        }
+
+
+
+                                                </div>
+                                                <div class="card-body p-0 d-flex mt-2">
+                                                    @if (!(item.User.Id==Model.LocalUser.Id))
+                                                    {
+                                                       <a asp-controller="Post" 
+   asp-action="ReportPost" 
+   asp-route-reporterId="@Model.LocalUser.Id" 
+   asp-route-postId="@item.Id" 
+   class="d-flex align-items-center text-danger">
+    <i class="feather-alert-circle me-2 font-lg text-danger"></i>
+    <h4 class="fw-700 font-xssss mb-0 text-danger">Report Post</h4>
+</a>
+                                                    }
+
+                                                </div>
+                                                <div class="card-body p-0 d-flex mt-2">
+                                                    @if (item.User.Id==Model.LocalUser.Id || Model.LocalUser.Role.Equals("ADMIN"))
+                                                    {
+                                                         <a asp-controller="Post" 
+   asp-action="DeletePost" 
+   asp-route-userId="@Model.LocalUser.Id" 
+   asp-route-postId="@item.Id" 
+   class="d-flex align-items-center text-danger">
+    <i class="feather-trash-2 me-2 font-lg text-danger"></i>
+    <h4 class="fw-700 font-xssss mb-0 text-danger">Delete this post</h4>
+</a>
+                                                    }
+                                                  </div>
+                                                
+                                            </div>
+                                         
+                                        </div>
+                                                </div>
+                                                <div class="card-body p-0 me-lg-5">
+                                                    <p class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2">@item.Content</p>
+                                                </div> @if (item.MediaPath is not null) { var extension = System.IO.Path.GetExtension(item.MediaPath)?.ToLower(); var isImage = extension == ".jpg" || extension == ".jpeg" || extension == ".png" || extension == ".webp" || extension == ".gif"; var isVideo = extension == ".mp4" || extension == ".mov" || extension == ".webm" || extension == ".avi"; if (isImage) {
+                                                <div class="card-body d-block p-0 mb-3">
+                                                    <div class="row ps-2 pe-2">
+                                                        <div class="col-sm-12 p-1">
+                                                            <a href="@item.MediaPath" data-lightbox="roadtr">
+                                                                <img src="@item.MediaPath" class="rounded-3 w-100" alt="image">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            } else if (isVideo)
+                                            {
+
+                                                <div class="card-body d-block p-0 mb-3">
+                                                    <div class="row ps-2 pe-2">
+                                                        <div class="col-sm-12 p-1">
+                                                            <video class="rounded-3 w-100" controls>
+                                                                <source src="@item.MediaPath" type="video/mp4">
+                                                            </video>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            } }
+                                            <div class="card-body d-flex p-0 align-items-center">
+                                               <div class="d-flex align-items-center me-3">
+                                                    <span class="fw-600 text-grey-900 font-xssss">
+                                                        <a href="#" class="like-button" data-user-id="@Model.LocalUser.Id" data-post-id="@item.Id" data-is-liked="@Model.LikedPosts.Any(p => p.PostId == item.Id)">
+                                                             @if (Model.LikedPosts.Any(p => p.PostId == item.Id)) {
+                                                            <i class="bi bi-heart-fill text-danger fs-3"></i>
+                                                                                                                        } else
+                                                            {
+
+                                                                <i class="bi bi-heart text-danger fs-3"></i>
+                                                            }
+                                                        </a>
+                                                        <span class="like-count">@item.LikeCount</span>
+                                                    </span>
+                                                </div>
+                                               
+                                                <button class="ms-auto btn btn-sm bg-transparent comment-trigger">
+                                                    <i class="feather-message-circle text-dark me-1 font-md"></i>
+                                                    <span class="fw-600 text-grey-900 font-xssss">Comments</span>
+                                                </button>
+                                            </div>
+                                            <div class="comments-section mt-3" style="display: none;">
+                                                <div class="border-top pt-3">
+                                                    <div class="mb-3">
+                                                         @foreach (var comment in item.Comments) { if (!comment.IsDeleted) {
+                                                        <div class="d-flex mb-3">
+                                                            <img src="@comment.AppUser.ProfilePhotoPath??@comment.AppUser.DefaultProfilePath" alt="user" class="rounded-circle me-2" width="40">
+                                                            <div>
+                                                                <h6 class="fw-600 mb-0 font-xssss">
+                                                                    @comment.AppUser.Fullname <span class="text-grey-500 font-xsssss fw-500 ms-2">@comment.CreationDate.Minute minutes</span> @if (comment.AppUser.Id == Model.LocalUser.Id) {
+                                                                    <a asp-controller="Comment" asp-action="DeleteComment" asp-route-commentId="@comment.Id" class="text-danger ms-2" title="Delete Comment">
+                                                                        <i class="feather-trash-2"></i>
+                                                                    </a>
+                                                                                                                                        }
+                                                                </h6>
+                                                                <p class="text-grey-700 font-xssss mt-1 mb-2">@comment.Content</p>
+                                                            </div>
+                                                        </div>
+                                                                                                                } }
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="@Model.LocalUser.ProfilePhotoPath??@Model.LocalUser.DefaultProfilePath" alt="user" class="rounded-circle me-2" width="40">
+                                                        <form asp-controller="Comment" asp-action="CreateComment" method="post">
+                                                            <div class="input-group flex-grow-1">
+                                                                <input type="hidden" name="UserId" value="@Model.LocalUser.Id" />
+                                                                <input type="hidden" name="PostId" value="@item.Id" />
+                                                                <input type="text" name="Content" class="form-control border-3 bg-greylight rounded-3 font-xssss py-3" placeholder="Write a comment..." />
+                                                                <button type="submit" class="btn bg-transparent text-primary fw-600 font-xssss">Post</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                }
+ 
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="navtabs3" role="tabpanel" aria-labelledby="navtabs3-tab">
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-xl-8 col-xxl-9 col-lg-8">
+                 @foreach (var item in Model.OtherLikedPosts)
+                                        {
+                                            if (item.IsDeleted == true) { continue; }
+                                            <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-4">
+                                                <div class="card-body p-0 d-flex">
+                                                    <figure class="avatar me-3">
+                                                        <img src="@item.User.ProfilePhotoPath??@item.User.DefaultProfilePath" alt="image" class="shadow-sm rounded-circle w45">
+                                                    </figure>
+                                                    <h4 class="fw-700 text-grey-900 font-xssss mt-1">
+                                                        @item.User.Fullname <span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">@item.CreationDate.Minute minutes</span>
+                                                    </h4>
+                                                    <div class="ms-auto dropdown">
+                                            <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss"></i>
+                                            </a>
+
+                                             <div class="dropdown-menu dropdown-menu-start p-4 rounded-xxl border-0 shadow-lg" aria-labelledby="dropdownMenuButton">
+                                                <div class="card-body p-0 d-flex">
+
+                                                  
+                                                        @if (Model.SavedPosts.Any(p => p.PostId == item.Id))
+                                                        {  <a asp-controller="Post" 
+   asp-action="RemoveSavePost" 
+   asp-route-postId="@item.Id" 
+   class="d-flex align-items-center text-primary">
+    <i class="bi bi-bookmark-fill me-2 font-lg text-primary"></i>
+    <h4 class="fw-700 font-xssss mb-0 text-primary">Save Post</h4>
+</a>
+
+                                                        }
+                                                        else
+                                                        {
+                                                           <a asp-controller="Post" 
+   asp-action="SavePost" 
+   asp-route-postId="@item.Id" 
+   class="d-flex align-items-center text-primary">
+    <i class="bi bi-bookmark me-2 font-lg text-primary"></i>
+    <h4 class="fw-700 font-xssss mb-0 text-primary">Save Post</h4>
+</a>
+                                                        }
+
+
+
+                                                </div>
+                                                <div class="card-body p-0 d-flex mt-2">
+                                                    @if (!(item.User.Id==Model.LocalUser.Id))
+                                                    {
+                                                       <a asp-controller="Post" 
+   asp-action="ReportPost" 
+   asp-route-reporterId="@Model.LocalUser.Id" 
+   asp-route-postId="@item.Id" 
+   class="d-flex align-items-center text-danger">
+    <i class="feather-alert-circle me-2 font-lg text-danger"></i>
+    <h4 class="fw-700 font-xssss mb-0 text-danger">Report Post</h4>
+</a>
+                                                    }
+
+                                                </div>
+                                                <div class="card-body p-0 d-flex mt-2">
+                                                    @if (item.User.Id==Model.LocalUser.Id || Model.LocalUser.Role.Equals("ADMIN"))
+                                                    {
+                                                         <a asp-controller="Post" 
+   asp-action="DeletePost" 
+   asp-route-userId="@Model.LocalUser.Id" 
+   asp-route-postId="@item.Id" 
+   class="d-flex align-items-center text-danger">
+    <i class="feather-trash-2 me-2 font-lg text-danger"></i>
+    <h4 class="fw-700 font-xssss mb-0 text-danger">Delete this post</h4>
+</a>
+                                                    }
+                                                  </div>
+                                                
+                                            </div>
+                                         
+                                        </div>
+                                                </div>
+                                                <div class="card-body p-0 me-lg-5">
+                                                    <p class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2">@item.Content</p>
+                                                </div> @if (item.MediaPath is not null) { var extension = System.IO.Path.GetExtension(item.MediaPath)?.ToLower(); var isImage = extension == ".jpg" || extension == ".jpeg" || extension == ".png" || extension == ".webp" || extension == ".gif"; var isVideo = extension == ".mp4" || extension == ".mov" || extension == ".webm" || extension == ".avi"; if (isImage) {
+                                                <div class="card-body d-block p-0 mb-3">
+                                                    <div class="row ps-2 pe-2">
+                                                        <div class="col-sm-12 p-1">
+                                                            <a href="@item.MediaPath" data-lightbox="roadtr">
+                                                                <img src="@item.MediaPath" class="rounded-3 w-100" alt="image">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            } else if (isVideo)
+                                            {
+
+                                                <div class="card-body d-block p-0 mb-3">
+                                                    <div class="row ps-2 pe-2">
+                                                        <div class="col-sm-12 p-1">
+                                                            <video class="rounded-3 w-100" controls>
+                                                                <source src="@item.MediaPath" type="video/mp4">
+                                                            </video>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            } }
+                                            <!-- Like ve Yorum Butonları -->
+                                            <div class="card-body d-flex p-0 align-items-center">
+                                                <!-- Like Kısmı (Sol Tarafta) --> @* <div class="d-flex align-items-center me-3">
+                            <span class="fw-600 text-grey-900 font-xssss">
+                              <a href="#" class="like-button" data-user-id="@Model.LocalUser.Id" data-post-id="@item.Id">
+                                <i class="bi bi-heart text-danger fs-3"></i>
+                              </a> @item.LikeCount </span>
+                          </div> *@ <div class="d-flex align-items-center me-3">
+                                                    <span class="fw-600 text-grey-900 font-xssss">
+                                                        <a href="#" class="like-button" data-user-id="@Model.LocalUser.Id" data-post-id="@item.Id" data-is-liked="@Model.LikedPosts.Any(p => p.PostId == item.Id)">
+                                                            <!-- Like ikonu (dolu/boş) --> @if (Model.LikedPosts.Any(p => p.PostId == item.Id)) {
+                                                            <i class="bi bi-heart-fill text-danger fs-3"></i>
+                                                                                                                        } else
+                                                            {
+
+                                                                <i class="bi bi-heart text-danger fs-3"></i>
+                                                            }
+                                                        </a>
+                                                        <span class="like-count">@item.LikeCount</span>
+                                                    </span>
+                                                </div>
+                                                <!-- Yorum Butonu (Sağ Tarafta) -->
+                                                <button class="ms-auto btn btn-sm bg-transparent comment-trigger">
+                                                    <i class="feather-message-circle text-dark me-1 font-md"></i>
+                                                    <span class="fw-600 text-grey-900 font-xssss">Comments</span>
+                                                </button>
+                                            </div>
+                                            <!-- Yorumlar Bölümü (Başlangıçta Gizli) -->
+                                            <div class="comments-section mt-3" style="display: none;">
+                                                <div class="border-top pt-3">
+                                                    <!-- Mevcut Yorumlar -->
+                                                    <div class="mb-3">
+                                                        <!-- Yorum 1 --> @foreach (var comment in item.Comments) { if (!comment.IsDeleted) {
+                                                        <div class="d-flex mb-3">
+                                                            <img src="@comment.AppUser.ProfilePhotoPath??@comment.AppUser.DefaultProfilePath" alt="user" class="rounded-circle me-2" width="40">
+                                                            <div>
+                                                                <h6 class="fw-600 mb-0 font-xssss">
+                                                                    @comment.AppUser.Fullname <span class="text-grey-500 font-xsssss fw-500 ms-2">@comment.CreationDate.Minute minutes</span> @if (comment.AppUser.Id == Model.LocalUser.Id) {
+                                                                    <a asp-controller="Comment" asp-action="DeleteComment" asp-route-commentId="@comment.Id" class="text-danger ms-2" title="Delete Comment">
+                                                                        <i class="feather-trash-2"></i>
+                                                                    </a>
+                                                                                                                                        }
+                                                                </h6>
+                                                                <p class="text-grey-700 font-xssss mt-1 mb-2">@comment.Content</p>
+                                                            </div>
+                                                        </div>
+                                                                                                                } }
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="@Model.LocalUser.ProfilePhotoPath??@Model.LocalUser.DefaultProfilePath" alt="user" class="rounded-circle me-2" width="40">
+                                                        <form asp-controller="Comment" asp-action="CreateComment" method="post">
+                                                            <div class="input-group flex-grow-1">
+                                                                <input type="hidden" name="UserId" value="@Model.LocalUser.Id" />
+                                                                <input type="hidden" name="PostId" value="@item.Id" />
+                                                                <input type="text" name="Content" class="form-control border-3 bg-greylight rounded-3 font-xssss py-3" placeholder="Write a comment..." />
+                                                                <button type="submit" class="btn bg-transparent text-primary fw-600 font-xssss">Post</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                }
+   
+            </div>
+        </div>
+    </div>
+     <div class="tab-pane fade" id="navtabs4" role="tabpanel" aria-labelledby="navtabs4-tab">
+        <div class="row" style="margin-top: 30px; min-height: 600px;">
+            <div class="col-xl-8 col-xxl-9 col-lg-8">
+               @foreach (var item in Model.CurrentFriends)
+                                        {
+                                     <div class="card shadow-sm border-0 rounded-4 mb-3 hover-shadow" style="transition: all 0.3s;">
+    <div class="card-body d-flex align-items-center p-3">
+        <div class="flex-grow-1">
+            <a asp-controller="UserFriend" asp-action="GetUserProfile" asp-route-username="@item.Username" class="text-decoration-none">
+                <h5 class="card-title mb-1 text-primary">@item.Fullname</h5>
+            </a>
+            <small class="text-muted">@item.Username</small>
+        </div>
+        <img src="@item.ProfilePhoto??@item.DefaultProfilePhoto"
+             alt="Avatar"
+             class="rounded-circle ms-3"
+             style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #e0e0e0;">
+    </div>
+</div>
+                                        }
+
+            </div>
+        </div>
+    </div>
+    
+    
+    </div>
+
+
+
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main content -->
+        <!-- right chat -->
+        <div class="right-chat nav-wrap mt-2 right-scroll-bar">
+            <div class="middle-sidebar-right-content bg-white shadow-xss rounded-xxl">
+                <!-- loader wrapper -->
+                <div class="preloader-wrap p-3">
+                    <div class="box shimmer">
+                        <div class="lines">
+                            <div class="line s_shimmer"></div>
+                            <div class="line s_shimmer"></div>
+                            <div class="line s_shimmer"></div>
+                            <div class="line s_shimmer"></div>
+                        </div>
+                    </div>
+                    <div class="box shimmer mb-3">
+                        <div class="lines">
+                            <div class="line s_shimmer"></div>
+                            <div class="line s_shimmer"></div>
+                            <div class="line s_shimmer"></div>
+                            <div class="line s_shimmer"></div>
+                        </div>
+                    </div>
+                    <div class="box shimmer">
+                        <div class="lines">
+                            <div class="line s_shimmer"></div>
+                            <div class="line s_shimmer"></div>
+                            <div class="line s_shimmer"></div>
+                            <div class="line s_shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- loader wrapper -->
+                <div class="section full pe-3 ps-4 pt-4 position-relative feed-body">
+                    <h4 class="font-xsssss text-grey-500 text-uppercase fw-700 ls-3">CONTACTS</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
+                            <figure class="avatar float-left mb-0 me-2">
+                                <img src="~/public/images/user-8.png" alt="image" class="w35">
+                            </figure>
+                            <h3 class="fw-700 mb-0 mt-0">
+                                <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Hurin Seary</a>
+                            </h3>
+                            <span class="badge badge-primary text-white badge-pill fw-500 mt-0">2</span>
+                        </li>
+                        <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
+                            <figure class="avatar float-left mb-0 me-2">
+                                <img src="~/public/images/user-7.png" alt="image" class="w35">
+                            </figure>
+                            <h3 class="fw-700 mb-0 mt-0">
+                                <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Victor Exrixon</a>
+                            </h3>
+                            <span class="bg-success ms-auto btn-round-xss"></span>
+                        </li>
+                        <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
+                            <figure class="avatar float-left mb-0 me-2">
+                                <img src="~/public/images/user-6.png" alt="image" class="w35">
+                            </figure>
+                            <h3 class="fw-700 mb-0 mt-0">
+                                <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Surfiya Zakir</a>
+                            </h3>
+                            <span class="bg-warning ms-auto btn-round-xss"></span>
+                        </li>
+                        <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
+                            <figure class="avatar float-left mb-0 me-2">
+                                <img src="~/public/images/user-5.png" alt="image" class="w35">
+                            </figure>
+                            <h3 class="fw-700 mb-0 mt-0">
+                                <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Goria Coast</a>
+                            </h3>
+                            <span class="bg-success ms-auto btn-round-xss"></span>
+                        </li>
+                        <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
+                            <figure class="avatar float-left mb-0 me-2">
+                                <img src="~/public/images/user-4.png" alt="image" class="w35">
+                            </figure>
+                            <h3 class="fw-700 mb-0 mt-0">
+                                <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Hurin Seary</a>
+                            </h3>
+                            <span class="badge mt-0 text-grey-500 badge-pill pe-0 font-xsssss">4:09 pm</span>
+                        </li>
+                        <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
+                            <figure class="avatar float-left mb-0 me-2">
+                                <img src="~/public/images/user-3.png" alt="image" class="w35">
+                            </figure>
+                            <h3 class="fw-700 mb-0 mt-0">
+                                <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">David Goria</a>
+                            </h3>
+                            <span class="badge mt-0 text-grey-500 badge-pill pe-0 font-xsssss">2 days</span>
+                        </li>
+                        <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
+                            <figure class="avatar float-left mb-0 me-2">
+                                <img src="~/public/images/user-2.png" alt="image" class="w35">
+                            </figure>
+                            <h3 class="fw-700 mb-0 mt-0">
+                                <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Seary Victor</a>
+                            </h3>
+                            <span class="bg-success ms-auto btn-round-xss"></span>
+                        </li>
+                        <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
+                            <figure class="avatar float-left mb-0 me-2">
+                                <img src="~/public/images/user-12.png" alt="image" class="w35">
+                            </figure>
+                            <h3 class="fw-700 mb-0 mt-0">
+                                <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Ana Seary</a>
+                            </h3>
+                            <span class="bg-success ms-auto btn-round-xss"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="section full pe-3 ps-4 pt-4 pb-4 position-relative feed-body">
+                    <h4 class="font-xsssss text-grey-500 text-uppercase fw-700 ls-3">GROUPS</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
+                            <span class="btn-round-sm bg-primary-gradiant me-3 ls-3 text-white font-xssss fw-700">UD</span>
+                            <h3 class="fw-700 mb-0 mt-0">
+                                <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Studio Express</a>
+                            </h3>
+                            <span class="badge mt-0 text-grey-500 badge-pill pe-0 font-xsssss">2 min</span>
+                        </li>
+                        <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
+                            <span class="btn-round-sm bg-gold-gradiant me-3 ls-3 text-white font-xssss fw-700">UD</span>
+                            <h3 class="fw-700 mb-0 mt-0">
+                                <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Armany Design</a>
+                            </h3>
+                            <span class="bg-warning ms-auto btn-round-xss"></span>
+                        </li>
+                        <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
+                            <span class="btn-round-sm bg-mini-gradiant me-3 ls-3 text-white font-xssss fw-700">UD</span>
+                            <h3 class="fw-700 mb-0 mt-0">
+                                <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">De fabous</a>
+                            </h3>
+                            <span class="bg-success ms-auto btn-round-xss"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="section full pe-3 ps-4 pt-0 pb-4 position-relative feed-body">
+                    <h4 class="font-xsssss text-grey-500 text-uppercase fw-700 ls-3">Pages</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
+                            <span class="btn-round-sm bg-primary-gradiant me-3 ls-3 text-white font-xssss fw-700">UD</span>
+                            <h3 class="fw-700 mb-0 mt-0">
+                                <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Armany Seary</a>
+                            </h3>
+                            <span class="bg-success ms-auto btn-round-xss"></span>
+                        </li>
+                        <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
+                            <span class="btn-round-sm bg-gold-gradiant me-3 ls-3 text-white font-xssss fw-700">UD</span>
+                            <h3 class="fw-700 mb-0 mt-0">
+                                <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Entropio Inc</a>
+                            </h3>
+                            <span class="bg-success ms-auto btn-round-xss"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- right chat -->
+        <div class="app-footer border-0 shadow-lg bg-primary-gradiant">
+            <a href="default.html" class="nav-content-bttn nav-center">
+                <i class="feather-home"></i>
+            </a>
+            <a href="default-video.html" class="nav-content-bttn">
+                <i class="feather-package"></i>
+            </a>
+            <a href="default-live-stream.html" class="nav-content-bttn" data-tab="chats">
+                <i class="feather-layout"></i>
+            </a>
+            <a href="shop-2.html" class="nav-content-bttn">
+                <i class="feather-layers"></i>
+            </a>
+            <a href="default-settings.html" class="nav-content-bttn">
+                <img src="~/public/images/female-profile.png" alt="user" class="w30 shadow-xss">
+            </a>
+        </div>
+        <div class="app-header-search">
+            <form class="search-form">
+                <div class="form-group searchbox mb-0 border-0 p-1">
+                    <input type="text" class="form-control border-0" placeholder="Search...">
+                    <i class="input-icon">
+                        <ion-icon name="search-outline" role="img" class="md hydrated" aria-label="search outline"></ion-icon>
+                    </i>
+                    <a href="#" class="ms-1 mt-1 d-inline-block close searchbox-close">
+                        <i class="ti-close font-xs"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal bottom side fade" id="Modalstries" tabindex="-1" role="dialog" style=" overflow-y: auto;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content border-0 bg-transparent">
+                <button type="button" class="close mt-0 position-absolute top--30 right--10" data-dismiss="modal" aria-label="Close">
+                    <i class="ti-close text-white font-xssss"></i>
+                </button>
+                <div class="modal-body p-0">
+                    <div class="card w-100 border-0 rounded-3 overflow-hidden bg-gradiant-bottom bg-gradiant-top">
+                        <div class="owl-carousel owl-theme dot-style3 story-slider owl-dot-nav nav-none">
+                            <div class="item">
+                                <img src="~/public/images/story-5.jpg" alt="image">
+                            </div>
+                            <div class="item">
+                                <img src="~/public/images/story-6.jpg" alt="image">
+                            </div>
+                            <div class="item">
+                                <img src="~/public/images/story-7.jpg" alt="image">
+                            </div>
+                            <div class="item">
+                                <img src="~/public/images/story-8.jpg" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3 mb-0 p-3 position-absolute bottom-0 z-index-1 w-100">
+                        <input type="text" class="style2-input w-100 bg-transparent border-light-md p-3 pe-5 font-xssss fw-500 text-white" value="Write Comments">
+                        <span class="feather-send text-white font-md text-white position-absolute" style="bottom: 35px;right:30px;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-popup-chat">
+        <div class="modal-popup-wrap bg-white p-0 shadow-lg rounded-3">
+            <div class="modal-popup-header w-100 border-bottom">
+                <div class="card p-3 d-block border-0 d-block">
+                    <figure class="avatar mb-0 float-left me-2">
+                        <img src="~/public/images/user-12.png" alt="image" class="w35 me-1">
+                    </figure>
+                    <h5 class="fw-700 text-primary font-xssss mt-1 mb-1">Hendrix Stamp</h5>
+                    <h4 class="text-grey-500 font-xsssss mt-0 mb-0">
+                        <span class="d-inline-block bg-success btn-round-xss m-0"></span> Available
+                    </h4>
+                    <a href="#" class="font-xssss position-absolute right-0 top-0 mt-3 me-4">
+                        <i class="ti-close text-grey-900 mt-2 d-inline-block"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="modal-popup-body w-100 p-3 h-auto">
+                <div class="message">
+                    <div class="message-content font-xssss lh-24 fw-500">Hi, how can I help you?</div>
+                </div>
+                <div class="date-break font-xsssss lh-24 fw-500 text-grey-500 mt-2 mb-2">Mon 10:20am</div>
+                <div class="message self text-right mt-2">
+                    <div class="message-content font-xssss lh-24 fw-500">I want those files for you. I want you to send 1 PDF and 1 image file.</div>
+                </div>
+                <div class="snippet pt-3 ps-4 pb-2 pe-3 mt-2 bg-grey rounded-xl float-right" data-title=".dot-typing">
+                    <div class="stage">
+                        <div class="dot-typing"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="modal-popup-footer w-100 border-top">
+                <div class="card p-3 d-block border-0 d-block">
+                    <div class="form-group icon-right-input style1-input mb-0">
+                        <input type="text" placeholder="Start typing.." class="form-control rounded-xl bg-greylight border-0 font-xssss fw-500 ps-3">
+                        <i class="feather-send text-grey-500 font-md"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/public/js/plugin.js"></script>
+    <script src="~/public/js/lightbox.js"></script>
+    <script src="~/public/js/scripts.js"></script>
+    <script src="~/public/js/jquery.easypiechart.min.js"></script>
+    <script src="~/public/js/JavaScript.js"></script>
+    <script src="~/public/js/LikeInteraction.js"></script>
+    <script>
+        $('.chart').easyPieChart({
+          easing: 'easeOutElastic',
+          delay: 3000,
+          barColor: '#3498db',
+          trackColor: '#aaa',
+          scaleColor: false,
+          lineWidth: 5,
+          trackWidth: 5,
+          size: 50,
+          lineCap: 'round',
+          onStep: function(from, to, percent) {
+            this.el.children[0].innerHTML = Math.round(percent);
+          }
+        });
+
+
+                document.addEventListener("DOMContentLoaded", function() {
+          var triggerEl = document.querySelector('#tab1-tab');
+          var tab = new bootstrap.Tab(triggerEl);
+          tab.show();
+        });
+    </script>
+</body>
+</html>

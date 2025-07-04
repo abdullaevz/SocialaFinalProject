@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3;url=/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmed</title>
+
+    <link rel="stylesheet" href="~/public/css/themify-icons.css">
+    <link rel="stylesheet" href="~/public/css/feather.css">
+    <link rel="stylesheet" href="~/public/css/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/public/images/favicon.png">
+
+    <style>
+        body {
+            background-color: #f2f7fb;
+        }
+
+        .confirmation-box {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+            .confirmation-box i {
+                font-size: 48px;
+                color: #28a745;
+                margin-bottom: 20px;
+            }
+
+            .confirmation-box h2 {
+                font-weight: 700;
+                color: #2f2f2f;
+            }
+
+            .confirmation-box p {
+                font-size: 16px;
+                color: #666;
+                margin-top: 10px;
+            }
+    </style>
+</head>
+<body class="color-theme-blue mont-font">
+
+    <div class="confirmation-box">
+        <i class="feather-check-circle"></i>
+        <h2>Email Confirmed</h2>
+        <p>Your email has been successfully verified. Redirecting to homepage...</p>
+    </div>
+
+    <script>
+        // Yedek olarak JS ile de yönlendir (meta tag'a ek olarak)
+        setTimeout(function () {
+            window.location.href = "/";
+        }, 3000);
+    </script>
+
+</body>
+</html>
