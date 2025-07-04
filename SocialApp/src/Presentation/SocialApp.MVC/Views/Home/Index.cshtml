@@ -246,7 +246,6 @@
                                                    data-post-id="@item.Id"
                                                    data-is-liked="@Model.LikedPosts.Any(p => p.PostId == item.Id)">
 
-                                                    <!-- Like ikonu (dolu/boş) -->
                                                     @if (Model.LikedPosts.Any(p => p.PostId == item.Id))
                                                     {
                                                         <i class="bi bi-heart-fill text-danger fs-3"></i>
@@ -260,19 +259,15 @@
                                             </span>
                                         </div>
 
-                                        <!-- Yorum Butonu (Sağ Tarafta) -->
                                         <button class="ms-auto btn btn-sm bg-transparent comment-trigger">
                                             <i class="feather-message-circle text-dark me-1 font-md"></i>
                                             <span class="fw-600 text-grey-900 font-xssss">Comments</span>
                                         </button>
                                     </div>
 
-                                    <!-- Yorumlar Bölümü (Başlangıçta Gizli) -->
                                     <div class="comments-section mt-3" style="display: none;">
                                         <div class="border-top pt-3">
-                                            <!-- Mevcut Yorumlar -->
                                             <div class="mb-3">
-                                                <!-- Yorum 1 -->
                                                 @foreach (var comment in item.Comments)
                                                 {
                                                     if (!comment.IsDeleted)
@@ -479,7 +474,6 @@
         </div>
     </div>
     <script src="~/public/js/plugin.js"></script>
-    @* <script src="~/public/js/lightbox.js"></script> *@
     <script src="~/public/js/scripts.js"></script>
     <script src="~/public/js/JavaScript.js"></script>
     <script src="~/public/js/LikeInteraction.js"></script>

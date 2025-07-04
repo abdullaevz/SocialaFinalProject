@@ -41,62 +41,6 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-10">
 
-                            @* <div class="card w-100 border-0 shadow-xss rounded-xxl border-0 p-4 mb-3 overflow-hidden">
-                                <div class="card-body p-0 d-flex align-items-center mb-3">
-                                    <h4 class="fw-700 font-xss text-grey-900 pt-0 mb-0">Featured Users</h4>
-                                </div>
-                                <div class="card-body p-0 d-block mb-4">
-                                    <div class="owl-carousel owl-theme category-card overflow-visible owl-dot-nav nav-none style2 chatlist">
-                                        <div class="item online">
-                                            <div class="card bg-transparent bg-transparent-card border-0 shadow-none">
-                                                <div class="card-image text-center"><a href="#" data-target="#Modalstries" data-toggle="modal"><img src="~/public/images/user-22.png" alt="image" class="d-inline p-0"> <span class="d-block fw-600 font-xssss text-grey-600 text-dark">Ana</span></a></div>
-                                            </div>
-                                        </div>
-                                        <div class="item online">
-                                            <div class="card bg-transparent bg-transparent-card border-0 shadow-none">
-                                                <div class="card-image text-center"><a href="#" data-target="#Modalstries" data-toggle="modal"><img src="~/public/images/user-23.png" alt="image" class="d-inline p-0"> <span class="d-block fw-600 font-xssss text-grey-600 text-dark">Devid</span></a></div>
-                                            </div>
-                                        </div>
-                                        <div class="item online">
-                                            <div class="card bg-transparent bg-transparent-card border-0 shadow-none">
-                                                <div class="card-image text-center"><a href="#" data-target="#Modalstries" data-toggle="modal"><img src="~/public/images/user-24.png" alt="image" class="d-inline p-0"> <span class="d-block fw-600 font-xssss text-grey-600 text-dark">Anton</span></a></div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="card bg-transparent bg-transparent-card border-0 shadow-none">
-                                                <div class="card-image text-center"><a href="#" data-target="#Modalstries" data-toggle="modal"><img src="~/public/images/user-21.png" alt="image" class="d-inline p-0"> <span class="d-block fw-600 font-xssss text-grey-600 text-dark">Jane</span></a></div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="card bg-transparent bg-transparent-card border-0 shadow-none">
-                                                <div class="card-image text-center"><a href="#" data-target="#Modalstries" data-toggle="modal"><img src="~/public/images/user-25.png" alt="image" class="d-inline p-0"> <span class="d-block fw-600 font-xssss text-grey-600 text-dark">Wade</span></a></div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="card bg-transparent bg-transparent-card border-0 shadow-none">
-                                                <div class="card-image text-center"><a href="#" data-target="#Modalstries" data-toggle="modal"><img src="~/public/images/user-12.png" alt="image" class="d-inline shadow p-0"> <span class="d-block fw-600 font-xssss text-grey-600 text-dark">Cabe</span></a></div>
-                                            </div>
-                                        </div>
-
-                                        <div class="item online">
-                                            <div class="card bg-transparent bg-transparent-card border-0 shadow-none">
-                                                <div class="card-image text-center"><a href="#" data-target="#Modalstries" data-toggle="modal"><img src="~/public/images/user-24.png" alt="image" class="d-inline p-0"> <span class="d-block fw-600 font-xssss text-grey-600 text-dark">Anton</span></a></div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="card bg-transparent bg-transparent-card border-0 shadow-none">
-                                                <div class="card-image text-center"><a href="#" data-target="#Modalstries" data-toggle="modal"><img src="~/public/images/user-21.png" alt="image" class="d-inline p-0"> <span class="d-block fw-600 font-xssss text-grey-600 text-dark">Jane</span></a></div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="card bg-transparent bg-transparent-card border-0 shadow-none">
-                                                <div class="card-image text-center"><a href="#" data-target="#Modalstries" data-toggle="modal"><img src="~/public/images/user-25.png" alt="image" class="d-inline p-0"> <span class="d-block fw-600 font-xssss text-grey-600 text-dark">Wade</span></a></div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div> *@
 
         @foreach (var item in Model.AllPosts)
                             {
@@ -209,7 +153,7 @@
                                                    data-post-id="@item.Id"
                                                    data-is-liked="@Model.Likes.Any(p => p.PostId == item.Id)">
 
-                                                    <!-- Like ikonu (dolu/boş) -->
+                                                   
                                                     @if (Model.Likes.Any(p => p.PostId == item.Id))
                                                     {
                                                         <i class="bi bi-heart-fill text-danger fs-3"></i>
@@ -223,19 +167,15 @@
                                             </span>
                                         </div>
 
-                                        <!-- Yorum Butonu (Sağ Tarafta) -->
                                         <button class="ms-auto btn btn-sm bg-transparent comment-trigger">
                                             <i class="feather-message-circle text-dark me-1 font-md"></i>
                                             <span class="fw-600 text-grey-900 font-xssss">Comments</span>
                                         </button>
                                     </div>
 
-                                    <!-- Yorumlar Bölümü (Başlangıçta Gizli) -->
                                     <div class="comments-section mt-3" style="display: none;">
                                         <div class="border-top pt-3">
-                                            <!-- Mevcut Yorumlar -->
                                             <div class="mb-3">
-                                                <!-- Yorum 1 -->
                                                 @foreach (var comment in item.Comments)
                                                 {
                                                     if (!comment.IsDeleted)

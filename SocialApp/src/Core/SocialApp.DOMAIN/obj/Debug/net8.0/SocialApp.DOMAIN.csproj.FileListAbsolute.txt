@@ -10,3 +10,16 @@ C:\Users\stduser\source\repos\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8
 C:\Users\stduser\source\repos\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8.0\SocialApp.DOMAIN.pdb
 C:\Users\stduser\source\repos\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8.0\ref\SocialApp.DOMAIN.dll
 C:\Users\stduser\source\repos\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8.0\SocialApp.DOMAIN.csproj.AssemblyReference.cache
+C:\Users\stduser\Desktop\SocialaFinalProject\SocialApp\src\Core\SocialApp.DOMAIN\bin\Debug\net8.0\SocialApp.DOMAIN.deps.json
+C:\Users\stduser\Desktop\SocialaFinalProject\SocialApp\src\Core\SocialApp.DOMAIN\bin\Debug\net8.0\SocialApp.DOMAIN.dll
+C:\Users\stduser\Desktop\SocialaFinalProject\SocialApp\src\Core\SocialApp.DOMAIN\bin\Debug\net8.0\SocialApp.DOMAIN.pdb
+C:\Users\stduser\Desktop\SocialaFinalProject\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8.0\SocialApp.DOMAIN.csproj.AssemblyReference.cache
+C:\Users\stduser\Desktop\SocialaFinalProject\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8.0\SocialApp.DOMAIN.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\stduser\Desktop\SocialaFinalProject\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8.0\SocialApp.DOMAIN.AssemblyInfoInputs.cache
+C:\Users\stduser\Desktop\SocialaFinalProject\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8.0\SocialApp.DOMAIN.AssemblyInfo.cs
+C:\Users\stduser\Desktop\SocialaFinalProject\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8.0\SocialApp.DOMAIN.csproj.CoreCompileInputs.cache
+C:\Users\stduser\Desktop\SocialaFinalProject\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8.0\SocialApp.DOMAIN.sourcelink.json
+C:\Users\stduser\Desktop\SocialaFinalProject\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8.0\SocialApp.DOMAIN.dll
+C:\Users\stduser\Desktop\SocialaFinalProject\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8.0\refint\SocialApp.DOMAIN.dll
+C:\Users\stduser\Desktop\SocialaFinalProject\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8.0\SocialApp.DOMAIN.pdb
+C:\Users\stduser\Desktop\SocialaFinalProject\SocialApp\src\Core\SocialApp.DOMAIN\obj\Debug\net8.0\ref\SocialApp.DOMAIN.dll

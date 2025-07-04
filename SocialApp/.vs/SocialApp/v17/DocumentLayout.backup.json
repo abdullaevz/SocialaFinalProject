@@ -1,22 +1,122 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\stduser\\source\\repos\\SocialApp\\",
+  "WorkspaceRootPath": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{46FF3C1E-EE03-491D-B2A3-EB9D50C91078}|src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\SocialApp.INFRASTRUCTURE.csproj|c:\\users\\stduser\\source\\repos\\socialapp\\src\\infrastructure\\socialapp.infrastructure\\appsettings\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\userfriend\\getuserprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\userfriend\\getuserprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\userfriend\\explorefriends.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\userfriend\\explorefriends.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\userfriend\\currentfriends.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\userfriend\\currentfriends.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\userfriend\\allrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\userfriend\\allrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\user\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\user\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\user\\socialsettings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\user\\socialsettings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\user\\settings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\user\\settings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\user\\accountstatus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\user\\accountstatus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\user\\contactsettings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\user\\contactsettings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\user\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\user\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\shared\\_commoncomponent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\shared\\_commoncomponent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\home\\messagebox.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\home\\messagebox.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\home\\explorepostpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\home\\explorepostpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\error\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\error\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\account\\resetoldpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\account\\resetoldpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\account\\forgot.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\account\\forgot.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\account\\expiredlink.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\account\\expiredlink.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\account\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\account\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\presentation\\socialapp.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FF3C1E-EE03-491D-B2A3-EB9D50C91078}|src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\SocialApp.INFRASTRUCTURE.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\infrastructure\\socialapp.infrastructure\\appsettings\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46FF3C1E-EE03-491D-B2A3-EB9D50C91078}|src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\SocialApp.INFRASTRUCTURE.csproj|solutionrelative:src\\infrastructure\\socialapp.infrastructure\\appsettings\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46FF3C1E-EE03-491D-B2A3-EB9D50C91078}|src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\SocialApp.INFRASTRUCTURE.csproj|c:\\users\\stduser\\source\\repos\\socialapp\\src\\infrastructure\\socialapp.infrastructure\\cloudinary\\cloudinarysettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{46FF3C1E-EE03-491D-B2A3-EB9D50C91078}|src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\SocialApp.INFRASTRUCTURE.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\infrastructure\\socialapp.infrastructure\\cloudinary\\cloudinarysettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46FF3C1E-EE03-491D-B2A3-EB9D50C91078}|src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\SocialApp.INFRASTRUCTURE.csproj|solutionrelative:src\\infrastructure\\socialapp.infrastructure\\cloudinary\\cloudinarysettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46FF3C1E-EE03-491D-B2A3-EB9D50C91078}|src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\SocialApp.INFRASTRUCTURE.csproj|c:\\users\\stduser\\source\\repos\\socialapp\\src\\infrastructure\\socialapp.infrastructure\\concretes\\servcies\\clouduploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{46FF3C1E-EE03-491D-B2A3-EB9D50C91078}|src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\SocialApp.INFRASTRUCTURE.csproj|c:\\users\\stduser\\desktop\\socialafinalproject\\socialapp\\src\\infrastructure\\socialapp.infrastructure\\concretes\\servcies\\clouduploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46FF3C1E-EE03-491D-B2A3-EB9D50C91078}|src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\SocialApp.INFRASTRUCTURE.csproj|solutionrelative:src\\infrastructure\\socialapp.infrastructure\\concretes\\servcies\\clouduploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|c:\\users\\stduser\\source\\repos\\socialapp\\src\\presentation\\socialapp.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A77FF739-4DEF-4AE5-A039-3F1DA1512C9A}|src\\Presentation\\SocialApp.MVC\\SocialApp.MVC.csproj|solutionrelative:src\\presentation\\socialapp.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,10 +139,335 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:47:32.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:47:32.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetUserProfile.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\GetUserProfile.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\GetUserProfile.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\GetUserProfile.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\GetUserProfile.cshtml",
+              "ViewState": "AgIAANwCAAAAAAAAAAAcwKkCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:46:22.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExploreFriends.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\ExploreFriends.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\ExploreFriends.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\ExploreFriends.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\ExploreFriends.cshtml",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAI4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:46:12.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CurrentFriends.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\CurrentFriends.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\CurrentFriends.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\CurrentFriends.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\CurrentFriends.cshtml",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAHYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:44:20.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AllRequests.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\AllRequests.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\AllRequests.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\AllRequests.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\UserFriend\\AllRequests.cshtml",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAIUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:44:13.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Update.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\User\\Update.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\User\\Update.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\User\\Update.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\User\\Update.cshtml",
+              "ViewState": "AgIAALcAAAAAAAAAAAAAAL4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:44:02.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SocialSettings.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\User\\SocialSettings.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\User\\SocialSettings.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\User\\SocialSettings.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\User\\SocialSettings.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:43:53.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Settings.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\User\\Settings.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\User\\Settings.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\User\\Settings.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\User\\Settings.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:41:48.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ResetPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\User\\ResetPassword.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\User\\ResetPassword.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\User\\ResetPassword.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\User\\ResetPassword.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAF8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:41:41.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ContactSettings.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\User\\ContactSettings.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\User\\ContactSettings.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\User\\ContactSettings.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\User\\ContactSettings.cshtml",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAACoBAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:41:25.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AccountStatus.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\User\\AccountStatus.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\User\\AccountStatus.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\User\\AccountStatus.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\User\\AccountStatus.cshtml",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:40:49.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:40:44.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_CommonComponent.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Shared\\_CommonComponent.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\Shared\\_CommonComponent.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Shared\\_CommonComponent.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\Shared\\_CommonComponent.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:40:37.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MessageBox.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Home\\MessageBox.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\Home\\MessageBox.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Home\\MessageBox.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\Home\\MessageBox.cshtml",
+              "ViewState": "AgIAAAUBAAAAAAAAAAAAABQBAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:39:59.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAMUBAAAAAAAAAAAAANwBAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:39:36.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ExplorePostPage.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Home\\ExplorePostPage.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\Home\\ExplorePostPage.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Home\\ExplorePostPage.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\Home\\ExplorePostPage.cshtml",
+              "ViewState": "AgIAAHsBAAAAAAAAAAAAALIAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:39:06.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Error\\Error.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\Error\\Error.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Error\\Error.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\Error\\Error.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:39:02.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ResetOldPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\ResetOldPassword.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\ResetOldPassword.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\ResetOldPassword.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\ResetOldPassword.cshtml",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:38:57.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:38:55.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:38:51.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Forgot.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\Forgot.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\Forgot.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\Forgot.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\Forgot.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:38:48.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ExpiredLink.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\ExpiredLink.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\ExpiredLink.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\ExpiredLink.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\ExpiredLink.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:38:44.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ConfirmEmail.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\ConfirmEmail.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\ConfirmEmail.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\ConfirmEmail.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\ConfirmEmail.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:38:38.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AccessDenied.cshtml",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\AccessDenied.cshtml",
+              "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\AccessDenied.cshtml",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Views\\Account\\AccessDenied.cshtml",
+              "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Views\\Account\\AccessDenied.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T18:38:33.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
               "Title": "AppSettings.cs",
-              "DocumentMoniker": "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\AppSettings\\AppSettings.cs",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\AppSettings\\AppSettings.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\AppSettings\\AppSettings.cs",
-              "ToolTip": "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\AppSettings\\AppSettings.cs",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\AppSettings\\AppSettings.cs",
               "RelativeToolTip": "src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\AppSettings\\AppSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -51,37 +476,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 27,
               "Title": "CloudinarySettings.cs",
-              "DocumentMoniker": "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\Cloudinary\\CloudinarySettings.cs",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\Cloudinary\\CloudinarySettings.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\Cloudinary\\CloudinarySettings.cs",
-              "ToolTip": "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\Cloudinary\\CloudinarySettings.cs",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\Cloudinary\\CloudinarySettings.cs",
               "RelativeToolTip": "src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\Cloudinary\\CloudinarySettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T16:06:46.997Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-04T16:06:46.997Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 28,
               "Title": "CloudUploadService.cs",
-              "DocumentMoniker": "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\Concretes\\Servcies\\CloudUploadService.cs",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\Concretes\\Servcies\\CloudUploadService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\Concretes\\Servcies\\CloudUploadService.cs",
-              "ToolTip": "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\Concretes\\Servcies\\CloudUploadService.cs",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\Concretes\\Servcies\\CloudUploadService.cs",
               "RelativeToolTip": "src\\Infrastructure\\SocialApp.INFRASTRUCTURE\\Concretes\\Servcies\\CloudUploadService.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T16:06:40.494Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-04T16:06:40.494Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 25,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Program.cs",
               "RelativeDocumentMoniker": "src\\Presentation\\SocialApp.MVC\\Program.cs",
-              "ToolTip": "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Program.cs",
+              "ToolTip": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Presentation\\SocialApp.MVC\\Program.cs",
               "RelativeToolTip": "src\\Presentation\\SocialApp.MVC\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

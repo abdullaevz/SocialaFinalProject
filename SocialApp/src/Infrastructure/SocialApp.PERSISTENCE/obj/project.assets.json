@@ -7055,11 +7055,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Infrastructure\\SocialApp.PERSISTENCE\\SocialApp.PERSISTENCE.csproj",
+      "projectUniqueName": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Infrastructure\\SocialApp.PERSISTENCE\\SocialApp.PERSISTENCE.csproj",
       "projectName": "SocialApp.PERSISTENCE",
-      "projectPath": "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Infrastructure\\SocialApp.PERSISTENCE\\SocialApp.PERSISTENCE.csproj",
+      "projectPath": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Infrastructure\\SocialApp.PERSISTENCE\\SocialApp.PERSISTENCE.csproj",
       "packagesPath": "C:\\Users\\stduser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Infrastructure\\SocialApp.PERSISTENCE\\obj\\",
+      "outputPath": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Infrastructure\\SocialApp.PERSISTENCE\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7080,8 +7080,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Core\\SocialApp.APPLICATION\\SocialApp.APPLICATION.csproj": {
-              "projectPath": "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Core\\SocialApp.APPLICATION\\SocialApp.APPLICATION.csproj"
+            "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Core\\SocialApp.APPLICATION\\SocialApp.APPLICATION.csproj": {
+              "projectPath": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Core\\SocialApp.APPLICATION\\SocialApp.APPLICATION.csproj"
             }
           }
         }

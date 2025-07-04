@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Gi+IzGN6Zr4=",
+  "dgSpecHash": "qXGjTlWjF/o=",
   "success": true,
-  "projectFilePath": "C:\\Users\\stduser\\source\\repos\\SocialApp\\src\\Core\\SocialApp.APPLICATION\\SocialApp.APPLICATION.csproj",
+  "projectFilePath": "C:\\Users\\stduser\\Desktop\\SocialaFinalProject\\SocialApp\\src\\Core\\SocialApp.APPLICATION\\SocialApp.APPLICATION.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\stduser\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\stduser\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

@@ -67,9 +67,7 @@
             @{
                 bool isOnline;
 
-            <!-- Sol panel - Kullanıcı listesi -->
             <div class="w-1/3 border-r border-gray-200 bg-blue-50 flex flex-col">
-                <!-- Başlık -->
                 <div class="p-4 border-b border-gray-200 bg-white flex justify-between items-center">
                     <h2 class="text-xl font-semibold text-blue-700">Mesajlar</h2>
                     <button class="text-blue-500 hover:text-blue-700">
@@ -81,13 +79,10 @@
                 <div class="p-3 bg-blue-50">
                     <div class="relative">
                     @* 
-                     <input type="text" placeholder="Kişi ara..." class="w-full py-2 px-4 pl-10 rounded-full border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent" />
-                        <i class="fas fa-search absolute left-3 top-3 text-blue-400"></i>
                     *@
                     </div>
                 </div>
 
-                <!-- Kullanıcı listesi -->
                 <div class="flex-1 overflow-y-auto" id="user-list">
                     @foreach (var user in Model.ChatBoxUsers)
                     {
@@ -113,9 +108,7 @@
                 </div>
             </div>
 
-                <!-- Sağ panel - Mesajlaşma alanı -->
                 <div class="w-2/3 flex flex-col bg-white">
-                    <!-- Kullanıcı bilgisi ve araçlar -->
                     <div class="p-4 border-b border-gray-200 flex justify-between items-center">
                         <div class="flex items-center">
                             <div id="selected-user-avatar" class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg mr-3 hidden"></div>
@@ -127,14 +120,11 @@
                     <div class="flex space-x-4 text-blue-500">
                     </div>
                 </div>
-                <!-- Mesajlar -->
                 <div id="message-container" class="flex-1 p-4 overflow-y-auto message-container bg-blue-50">
                     <div class="flex flex-col space-y-2" id="message-list">
-                        <!-- Başlangıçta boş -->
                     </div>
                 </div>
 
-                <!-- Mesaj gönderme formu -->
                 <div class="p-4 border-t border-gray-200 bg-white">
                     <form id="message-form" class="flex items-center">
                    
@@ -155,7 +145,7 @@
 
         async function startSignalRConnection() {
             connection = new signalR.HubConnectionBuilder()
-                .withUrl("/chat") // ChatService hub'ın route'u
+                .withUrl("/chat") 
                 .withAutomaticReconnect()
                 .build();
 
@@ -183,11 +173,10 @@
                 console.log("✅ SignalR bağlantısı kuruldu");
             } catch (err) {
                 console.error("❌ SignalR bağlantısı kurulamadı:", err);
-                setTimeout(startSignalRConnection, 3000); // Bağlantı başarısızsa 3 saniye sonra tekrar dene
+                setTimeout(startSignalRConnection, 3000); 
             }
         }
 
-        // Sayfa yüklendiğinde çalıştır
         window.addEventListener("load", function () {
             startSignalRConnection();
         });
@@ -195,14 +184,11 @@
         function selectUser(userId, userName, userAvatar) {
             selectedUserId = userId;
 
-            // Aktif class'ları kaldır
             document.querySelectorAll('.user-item').forEach(item => item.classList.remove('user-active'));
 
-            // Aktif kullanıcıyı vurgula
             const selected = [...document.querySelectorAll('.user-item')].find(item => item.getAttribute('data-userid') === userId);
             if (selected) selected.classList.add('user-active');
 
-            // Sağ panelde bilgileri göster
             const avatarElem = document.getElementById('selected-user-avatar');
             const nameElem = document.getElementById('selected-user-name');
             const statusElem = document.getElementById('selected-user-status');
@@ -212,11 +198,10 @@
             statusElem.classList.remove('hidden');
 
             avatarElem.textContent = userAvatar;
-            avatarElem.style.backgroundColor = '#3b82f6'; // İstersen dinamik yapabilirsin
+            avatarElem.style.backgroundColor = '#3b82f6'; 
 
             nameElem.textContent = userName;
 
-            // Mesaj listesini temizle, placeholder göster
             const messageList = document.getElementById('message-list');
             messageList.innerHTML = `
                 <div class="text-center text-gray-400 py-10">
@@ -233,10 +218,8 @@
             const message = messageInput.value.trim();
 
             if (message && selectedUserId && connection) {
-                // Önce kendi mesajını göster
                 const messageList = document.getElementById('message-list');
 
-                // Eğer placeholder varsa kaldır
                 const placeholder = messageList.querySelector('.text-center');
                 if (placeholder) placeholder.remove();
 
@@ -253,7 +236,6 @@
 
                 messageInput.value = '';
 
-                // SignalR ile backend'e mesaj gönder
                 connection.invoke("SendMessage", selectedUserId, message)
                     .catch(err => console.error("Mesaj gönderme hatası:", err));
             }
@@ -266,7 +248,6 @@
                     return response.json();
                 })
                 .then(messages => {
-                    // Mesajları listele
                     displayMessages(messages);
                 })
                 .catch(error => {
@@ -277,7 +258,7 @@
 
                 function displayMessages(messages) {
             const messageList = document.getElementById('message-list');
-            messageList.innerHTML = ''; // önce temizle
+            messageList.innerHTML = ''; 
 
             messages.forEach(msg => {
                 const isSentByMe = msg.senderId === @Model.LocalUserId;
@@ -293,7 +274,6 @@
                 messageList.appendChild(messageElement);
             });
 
-            // Mesaj kutusunu en sona kaydır
             messageList.scrollTop = messageList.scrollHeight;
         }
 

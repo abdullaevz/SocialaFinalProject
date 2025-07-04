@@ -4,7 +4,7 @@ namespace SocialApp.MVC.Controllers;
 
 public class ErrorController : Controller
 {
-    //[Route("Error")]
+    [Route("Error")]
     public IActionResult Error()
     {
         return View();
