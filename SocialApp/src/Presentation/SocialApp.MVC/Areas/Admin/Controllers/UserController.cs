@@ -65,6 +65,7 @@ public class UserController : Controller
             DateTime = user.CreatedDate,
             Status = user.SecurityStatus,
             Role = user.Role,
+            ReportCount = user.ReportCount,
 
 
 

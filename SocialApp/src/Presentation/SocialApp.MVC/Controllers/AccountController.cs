@@ -89,6 +89,12 @@ public class AccountController : Controller
             return View();
         }
 
+        if (!userModel.Password.Equals(userModel.PasswordConfirm))
+        {
+            ModelState.AddModelError(string.Empty,"Paswords dont match");
+            return View();
+        }
+
         var registerResult = await _mediator.Send(new CheckRegisterQueryRequest());
 
         if (!registerResult.OneData)
@@ -119,7 +125,7 @@ public class AccountController : Controller
 
 
             //var confirmLink = Url.Action("ConfirmEmail", "Account", new { userId = result.User.Id, token = encodedToken }, Request.Scheme);
-            string htmlMessage = $"Pleace click here <a href='{confirmationUrl}'>for confirm your current email adress</a>.";
+            string htmlMessage = $"Please click here <a href='{confirmationUrl}'>for confirm your current email adress</a>.";
             await _emailService.SendEmailAsync(result.User.Email, "Confirm email adress", htmlMessage);
         }
 
@@ -142,7 +148,7 @@ public class AccountController : Controller
 
 
             //var confirmLink = Url.Action("ConfirmEmail", "Account", new { userId = result.User.Id, token = encodedToken }, Request.Scheme);
-            string htmlMessage = $"Pleace click here <a href='{confirmationUrl}'>for confirm your current email adress</a>.";
+            string htmlMessage = $"Please click here <a href='{confirmationUrl}'>for confirm your current email adress</a>.";
             await _emailService.SendEmailAsync(user.Email, "Confirm email adress", htmlMessage);
         }
         else
@@ -171,6 +177,7 @@ public class AccountController : Controller
             if (result.Succeeded)
             {
                 user.SecurityStatus = DOMAIN.Enums.SecurityStatuses.SAFE;
+                await _userManager.UpdateAsync(user);
                 return View("ConfirmEmail");
             }
             else

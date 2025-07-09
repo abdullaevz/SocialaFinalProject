@@ -63,6 +63,9 @@ public class StartupService : IStartupService
                 Fullname = "Admin user",
                 Role = DOMAIN.Enums.UserRoles.ADMIN,
                 CreatedDate = DateTime.UtcNow,
+                IsPrivate=true,
+                IsVerified=true,
+                EmailConfirmed=true,
             };
 
             await _userManager.CreateAsync(adminUser, "Admin.123");

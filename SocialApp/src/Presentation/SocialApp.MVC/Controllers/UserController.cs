@@ -128,6 +128,7 @@ public class UserController : Controller
         {
             return RedirectToAction("Login","Account");
         }
+        
         var model = new StatusVM() { AccountStatus = user.SecurityStatus };
         ViewBag.LocalProfilePhoto = user.ProfilePhotoPath;
         ViewBag.LocalUsername = user.UserName;

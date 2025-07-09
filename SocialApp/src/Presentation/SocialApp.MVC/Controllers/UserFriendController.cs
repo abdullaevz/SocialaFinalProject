@@ -89,7 +89,22 @@ public class UserFriendController : Controller
         var friendsList = await _mediator.Send(new GetCurrentUsersQueryRequest(user.Id));
         ViewBag.LocalProfilePhoto = user.ProfilePhotoPath;
         ViewBag.LocalUsername = user.UserName;
-        return View(new UserProfileVM() { CurrentFriends = friendsList.Data, ActiveBanner = banner.OneData.Url, BlockIds = blockList.Data, OtherLikedPosts = likedPostFullList.Data, OtherSavedPosts = savedPostFullList.Data, SavedPosts = savesList.Data, LikedPosts = likesList.Data, LocalUser = user, AreFriends = friendStatus.Response, User = userResult.OneData, Accounts = accResult.Data, Posts = postResult.Data, LocalUsername = user.UserName });
+        return View(new UserProfileVM()
+        {
+            CurrentFriends = friendsList.Data,
+            ActiveBanner = banner.OneData.Url,
+            BlockIds = blockList.Data,
+            OtherLikedPosts = likedPostFullList.Data,
+            OtherSavedPosts = savedPostFullList.Data,
+            SavedPosts = savesList.Data,
+            LikedPosts = likesList.Data,
+            LocalUser = user,
+            AreFriends = friendStatus.Response,
+            User = userResult.OneData,
+            Accounts = accResult.Data,
+            Posts = postResult.Data,
+            LocalUsername = user.UserName
+        });
     }
 
 
@@ -97,6 +112,7 @@ public class UserFriendController : Controller
     [HttpGet("SendFriendRequest/{userId}")]
     public async Task<IActionResult> SendFriendRequest(int userId)
     {
+        var referer = Request.Headers["Referer"].ToString();
         if (!ModelState.IsValid)
         {
             return RedirectToAction(nameof(ExploreFriends));
@@ -115,8 +131,11 @@ public class UserFriendController : Controller
 
         ViewBag.LocalProfilePhoto = user.ProfilePhotoPath;
         ViewBag.LocalUsername = user.UserName;
-
-        return RedirectToAction(nameof(ExploreFriends));
+        if (referer is not null)
+        {
+            return Redirect(referer);
+        }
+            return RedirectToAction(nameof(ExploreFriends));
     }
 
     [HttpGet("RequestResult/{result}/{requestId}")]
@@ -140,12 +159,12 @@ public class UserFriendController : Controller
 
         if (user is null)
         {
-            return RedirectToAction("Login","Account");
+            return RedirectToAction("Login", "Account");
         }
 
         var referer = Request.Headers["Referer"].ToString();
 
-        var resul = await _mediator.Send(new DeleteUserFriendCommandRequest(user.Id,userId));
+        var resul = await _mediator.Send(new DeleteUserFriendCommandRequest(user.Id, userId));
 
         if (referer is not null)
         {

@@ -18,6 +18,7 @@ public class PostGetVM
     public string MediaPath { get; set; }
     public bool IsDeleted { get; set; }
     public int LikeCount {  get; set; }
+    public int ReportCount {  get; set; }
     public List<Comment> Comments { get; set; }
     public List<PostLike> PostLikes{ get; set; }
     public List<int> IsLikedBy { get; set; } = [];

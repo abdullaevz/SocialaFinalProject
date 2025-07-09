@@ -63,16 +63,16 @@
                                 <input asp-for="Email" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Your Email Address">
                             </div>
                             <div class="form-group icon-input mb-3">
-                                <input asp-for="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password">
+                                <input asp-for="Password" type="password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password">
                                 <i class="font-sm ti-lock text-grey-500 pe-0"></i>
                             </div>
                             <div class="form-group icon-input mb-1">
-                                <input asp-for="Password" type="password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Confirm Password">
+                                <input asp-for="PasswordConfirm" type="password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Confirm Password">
                                 <i class="font-sm ti-lock text-grey-500 pe-0"></i>
                             </div>
                             <div class="form-check text-left mb-3">
                                 <input  asp-for="Policy" type="checkbox" class="form-check-input mt-2" id="exampleCheck2">
-                                <label asp-for="Policy" class="form-check-label font-xsss text-grey-500" for="exampleCheck2">Accept Term and Conditions</label>
+                                <label asp-for="Policy" class="form-check-label fw-bold font-xsss text-dark" for="exampleCheck2">Accept Term and Conditions</label>
                             </div>
                             <div class="form-group mb-1"><button type="submit"  class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">Register</button></div>
 

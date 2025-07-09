@@ -17,6 +17,7 @@ public class AppUser : IdentityUser<int>
     public string Description { get; set; }
     public string Country { get; set; }
     public string Profession { get; set; }
+    public int ReportCount { get; set; }
     public string PhoneNumber { get; set; }
     public bool IsPrivate { get; set; }
     public bool IsVerified { get; set; }

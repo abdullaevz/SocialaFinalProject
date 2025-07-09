@@ -9,6 +9,7 @@ namespace SocialApp.APPLICATION.ViewModels.MessageBoxViewModels;
 public class ChatUserVM
 {
     public int UserId { get; set; }
+    public string ProfilePhoto { get; set; }
     public string UserName { get; set; }
     public string Fullname { get; set; }
     public string Initials { get; set; }

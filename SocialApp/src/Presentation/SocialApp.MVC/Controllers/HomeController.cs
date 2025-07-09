@@ -86,7 +86,7 @@ public class HomeController : Controller
 
         foreach (var item in result.Data)
         {
-            newList.Add(new ChatUserVM() { Fullname = item.Fullname, Initials = $"{item.Fullname[0]}{item.Fullname[item.Fullname.Length - 1]}", UserId = item.FriendId, UserName = item.Username });
+            newList.Add(new ChatUserVM() { ProfilePhoto=item.ProfilePhoto,Fullname = item.Fullname, Initials = $"{item.Fullname[0]}{item.Fullname[item.Fullname.Length - 1]}", UserId = item.FriendId, UserName = item.Username });
         }
 
         return View(new ChatBoxVM() { ChatBoxUsers = newList, LocalUserId = user.Id, OnlineUsersList = ChatService.OnlineUsers });

@@ -23,6 +23,7 @@ public class UserCreateVM
     [NotNull]
     [MinLength(5,ErrorMessage ="Minimum 5 simvol olmalıdır")]
     public string Password{ get; set; }
+    public string PasswordConfirm{ get; set; }
     [Required(ErrorMessage = "You need to Accept Term and Conditions")]
     public bool Policy { get; set; }
 }

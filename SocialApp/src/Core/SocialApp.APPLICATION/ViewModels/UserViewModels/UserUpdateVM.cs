@@ -23,6 +23,7 @@ namespace SocialApp.APPLICATION.ViewModels.UserViewModels
         public UserRoles Role{ get; set; }
         public string Country { get; set; }
         public string Profession { get; set; }
+        public int ReportCount { get; set; }
         public string Description { get; set; }
         public bool IsPrivate { get; set; }
         public bool IsVerified{ get; set; }

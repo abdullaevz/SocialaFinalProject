@@ -39,7 +39,7 @@ public class EmailService : IEmailSender
 
         var smtp = new SmtpClient("smtp.gmail.com", 587)
         {
-            Credentials = new NetworkCredential(_config["SMPTSettings:Mail"], _config["SMTPSettings:Pass"] ),
+            Credentials = new NetworkCredential(_config["SMTPSettings:Mail"], _config["SMTPSettings:Pass"] ),
             EnableSsl = true
         };
 

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace SocialApp.APPLICATION.Features.Commands.PostCommands.UpdatePost;
 
-public class UpdatePostCommandRequest:IRequest<AppResult>
+public class UpdatePostCommandRequest : IRequest<AppResult>
 {
     public PostUpdateVM PostUpdateVM { get; set; }
 
@@ -42,7 +42,7 @@ public class UpdatePostCommandHandler : IRequestHandler<UpdatePostCommandRequest
         var postModel = await readRepository.GetByIdAsync(request.PostUpdateVM.PostId);
         if (postModel is not null)
         {
-            postModel.SecurityStatus=request.PostUpdateVM.Status;
+            postModel.SecurityStatus = request.PostUpdateVM.Status;
             await writeRepository.SaveAsync();
         }
 

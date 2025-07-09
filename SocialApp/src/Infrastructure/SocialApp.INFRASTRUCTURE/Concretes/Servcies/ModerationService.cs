@@ -14,20 +14,24 @@ namespace SocialApp.INFRASTRUCTURE.Concretes.Servcies;
 public class ModerationService : IModerationService
 {
     private readonly string _prompt;
+    private readonly string _key;
 
     public ModerationService(IConfiguration configuration)
     {
-        _prompt = configuration["ModerationPrompt"]??"";
+        _prompt = configuration["Moderation:ModerationPrompt"] ??"";
+        _key = configuration["Moderation:AIKey"] ??"";
     }
     public Task<string> SendPrompt(string content = "Is this sentence safe?")
     {
+        Console.WriteLine("==================");
+        Console.WriteLine(_key);
         if (content is null)
         {
             return Task.FromResult("Enter valid content");
         }
 
         var endpoint = new Uri("https://models.github.ai/inference");
-        var credential = new AzureKeyCredential("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");
+        var credential = new AzureKeyCredential(_key);
         var model = "openai/gpt-4.1";
 
         var client = new ChatCompletionsClient(

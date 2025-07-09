@@ -49,6 +49,8 @@ public class ChatService : Hub
 
     }
 
+    public async Task Typing(int receiverUserId) { await Clients.User(receiverUserId.ToString()).SendAsync("UserTyping", Context.UserIdentifier); }
+
     public override Task OnConnectedAsync()
     {
 

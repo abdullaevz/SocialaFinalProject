@@ -57,7 +57,15 @@ public class PostController : Controller
         homePageVM.PostCreateModel.UserId = user.Id;
 
 
-        try { var contentResult = await _moderationService.SendPrompt(homePageVM.PostCreateModel.Content); }
+        try
+        {
+            var contentResult = await _moderationService.SendPrompt(homePageVM.PostCreateModel.Content);
+            if (contentResult.Equals("false"))
+            {
+                TempData["WarningMessage"] = "Please make sure that the content you share is ethical and safe.";
+                return RedirectToAction("Index", "Home");
+            }
+        }
         catch (Exception ex)
         {
             TempData["WarningMessage"] = "Please make sure that the content you share is ethical and safe.";

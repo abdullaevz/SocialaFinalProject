@@ -16,6 +16,7 @@ public class Post : BaseModel
     public SecurityStatuses SecurityStatus { get; set; }
     public int LikeCount { get; set; }
     public int CommentCount{ get; set; }
+    public int ReportCount { get; set; }
     public int UserId { get; set; }
     public AppUser User { get; set; }
     public ICollection<Comment> Comments { get; set; }
