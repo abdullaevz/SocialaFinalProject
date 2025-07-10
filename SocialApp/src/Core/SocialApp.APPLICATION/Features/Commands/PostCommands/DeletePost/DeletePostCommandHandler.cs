@@ -23,9 +23,21 @@ public class DeletePostCommandHandler : IRequestHandler<DeletePostCommandRequest
         {
             return await AppResult.Failure("Cannot find any model with this id");
         }
-        await _postRepository.SoftDeleteAsync(post);
-        await _postRepository.SaveAsync();
+
+        if (post.IsDeleted == false)
+        {
+            await _postRepository.SoftDeleteAsync(post);
+            await _postRepository.SaveAsync();
+        }
+        else
+        {
+            post.IsDeleted = false;
+            await _postRepository.UpdateAsync(post);
+            await _postRepository.SaveAsync();
+
+        }
+
         //Delete codes
-        return await AppResult.SuccessResult("Deleted successfully") ;
+        return await AppResult.SuccessResult("Deleted successfully");
     }
 }

@@ -44,6 +44,8 @@ public class CloudUploadService : ICloudUploadService
 
         if (result.StatusCode != System.Net.HttpStatusCode.OK)
         {
+            Console.WriteLine($"Cloudinary status: {result.StatusCode}");
+            Console.WriteLine($"Cloudinary error: {result.Error?.Message}");
             return await AppResult.Failure("Upload exception occured");
         }
 

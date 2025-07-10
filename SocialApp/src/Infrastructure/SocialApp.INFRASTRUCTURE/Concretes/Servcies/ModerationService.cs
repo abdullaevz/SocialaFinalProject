@@ -23,15 +23,14 @@ public class ModerationService : IModerationService
     }
     public Task<string> SendPrompt(string content = "Is this sentence safe?")
     {
-        Console.WriteLine("==================");
-        Console.WriteLine(_key);
+    
         if (content is null)
         {
             return Task.FromResult("Enter valid content");
         }
 
         var endpoint = new Uri("https://models.github.ai/inference");
-        var credential = new AzureKeyCredential(_key);
+        var credential = new AzureKeyCredential("");
         var model = "openai/gpt-4.1";
 
         var client = new ChatCompletionsClient(
@@ -43,7 +42,7 @@ public class ModerationService : IModerationService
         {
             Messages =
     {
-        new ChatRequestSystemMessage(_prompt),
+        new ChatRequestSystemMessage("You are a content moderation assistant. If the input you receive contains any inappropriate usage, unethical profanity, or threats in any language, return false; otherwise, return true."),
         new ChatRequestUserMessage(content),
     },
             Temperature = 1f,

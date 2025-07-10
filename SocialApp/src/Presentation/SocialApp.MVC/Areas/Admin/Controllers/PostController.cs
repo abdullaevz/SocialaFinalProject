@@ -3,6 +3,8 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Build.Execution;
+using SocialApp.APPLICATION.Features.Commands.PostCommands.DeletePost;
+using SocialApp.APPLICATION.Features.Commands.PostCommands.UpdatePost;
 using SocialApp.APPLICATION.Features.Queries.PostQueries.GetAllPostsByCondition;
 using SocialApp.APPLICATION.Features.Queries.PostQueries.GetAllPostsByPostId;
 using SocialApp.APPLICATION.Features.Queries.PostQueries.GetAllUserPostsById;
@@ -43,6 +45,26 @@ public class PostController : Controller
         }
 
         return View(result.OneData);
+    }
+
+    [HttpPost("UpdatePost/{postId}")]
+    public async Task<IActionResult> UpdatePost(int postId)
+    {
+        var referer = Request.Headers["Referer"].ToString();
+        var result = await _mediator.Send(new DeletePostCommandRequest(postId));
+
+
+        if (!result.Success)
+        {
+            Console.WriteLine(result.Errors[0]);
+        }
+
+        if (referer is not null)
+        {
+            return Redirect(referer);
+
+        }
+        return RedirectToAction(nameof(GetAllPosts));
     }
 
 }

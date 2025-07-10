@@ -65,6 +65,11 @@ public class ModerationController : Controller
         
         var result = await _mediator.Send(new CreateBannerCommandRequest(file));
 
+        if (!result.Success)
+        {
+            Console.WriteLine(false);
+        }
+
         return RedirectToAction(nameof(BannersView));
     }
 
